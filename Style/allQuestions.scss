@@ -1,0 +1,180 @@
+.allQuestions {
+    margin-top: 8rem;
+
+
+
+    .rightPanel {
+
+        .headerSection {
+            border-radius: 10px;
+            border-bottom: #212121 2px solid;
+
+            .subHeaderSection {
+                padding-bottom: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+
+                .header1 {
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                    text-transform: capitalize;
+                    letter-spacing: 1px;
+                }
+
+                .header2 {
+                    margin-top: 2rem;
+                    font-weight: 700;
+
+                    span {
+                        font-weight: 800;
+                    }
+                }
+
+                button {
+                    width: 8rem;
+                    font-weight: 700;
+                    font-size: 0.7rem;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+                }
+
+                .questionBtn button {
+                    background-color: #38b000;
+                }
+
+                .filter>button {
+                    background-color: #ef233c;
+                    color: #ffd60a;
+                }
+            }
+
+            .accordion {
+                .accordion-item {
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                    background-color: #e0e1dd;
+                    border-top: 0;
+                    outline: 0;
+
+                    .accordion-body {
+                        .filterHeader {
+                            font-weight: 800;
+                            letter-spacing: 1px;
+                            font-size: 1rem;
+                        }
+
+                        .filterOptions {
+                            margin-top: 1rem;
+                            font-weight: 700;
+                            font-size: 0.8rem;
+                        }
+
+                        .filterClearBtn {
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                            width: 8rem;
+                            background-color: #fca311;
+                            font-size: 0.8rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        .questionContainer {
+            border-bottom: #6c757d 1.5px solid;
+            padding: 1rem 0;
+            font-weight: 700;
+
+            .questionsleftPanel {
+                color: #757171;
+                font-size: 0.8rem;
+
+                i {
+                    font-size: 1.1rem;
+                }
+
+                .buttonStyle {
+                    color: #757171;
+                    text-align: left;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    outline: 0;
+                    border: 0;
+                    padding: 0;
+                }
+
+            }
+
+            .questionTitle {
+                color: #4361ee;
+                font-size: 1rem;
+            }
+
+            .questionIssue {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                /* Limit to 2 lines */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 3rem;
+                /* Adjust based on line-height */
+                margin-top: 1rem;
+                color: #4e5154;
+                font-size: 0.8rem;
+
+            }
+
+            .userDiv_time {
+                font-size: 0.7rem;
+                margin-top: 0.8rem;
+                color: #757171;
+
+                img {
+                    margin-right: 0.5rem;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    border-radius: 50%;
+                    border: 1px solid black;
+                }
+            }
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:991.5px) {
+    .rightPanel {
+        padding: 0.5rem 4rem;
+    }
+}
