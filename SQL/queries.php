@@ -7,13 +7,13 @@ require './Backend/Components/connection.php';
 
 if (isset($_GET['topic_Id'])) {
     $questionSQL = "select 
-                    question.`question id` , question.userId ,  question.`question title` , question.`question description`,question.`question created at`,
+                    question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
                     users.username , users.userAvtar 
-                    from question left join answer on question.`question id` = answer.`question id` join users on question.userId = users.userID ;
-                    where question.`topic id`;";
+                    from question left join answer on question.`question id` = answer.`question id` join users on question.userId = users.userID 
+                    where question.`topic id` = ;";
 } else {
     $questionSQL = "select 
-                    question.`question id` , question.userId ,  question.`question title` , question.`question description`,question.`question created at`,
+                    question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
                     users.username , users.userAvtar 
                     from question left join answer on question.`question id` = answer.`question id` join users on question.userId = users.userID ;";
 }

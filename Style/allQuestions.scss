@@ -138,7 +138,22 @@
                 }
             }
 
+            .editDeleteBtn {
+                margin-top: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
 
+                .buttonStyle {
+                    color: #757171;
+                    text-align: left;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    outline: 0;
+                    border: 0;
+                    padding: 0;
+                }
+            }
         }
 
     }

@@ -162,7 +162,7 @@ include './SQL/queries.php';
                         $questionCreatedAt = $allQuestion['question created at'];
                         $userName = $allQuestion['username'];
                         $userAvtar = $allQuestion['userAvtar'];
-
+                        // var_dump($allQuestion);
                         if ($userAvtar == '') {
                             $userAvtar = 'https://images.freeimages.com/image/previews/374/instabutton-png-design-5690390.png?fmt=webp&w=500';
                         }
@@ -189,14 +189,8 @@ include './SQL/queries.php';
                                                 <i class="fa-regular fa-bookmark me-2"></i>Save Question
                                             </button>
                                         </div>
-                                        <!-- if session user == user of question -->
-                                        <div class="my-2">
-                                            <button class="btn buttonStyle">
-                                                <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Question
-                                            </button>
-                                        </div>
-                                        <!-- if session user == user of question -->
                                     </div>
+
                                     <div class="col-10">
                                         <div class="questionTitle">
                                             <a href="answers.php?questionId=<?php echo $questionId ?>" class="nav-link">
@@ -209,6 +203,33 @@ include './SQL/queries.php';
                                                 </span> asked 11
                                                 mins ago</span>
                                         </div>
+
+                                        <!-- if session user == user of question -->
+                                        <!-- links will contain backend Deletepage with question id as get request  -->
+                                        <?php
+                                        $questionUserId = $allQuestion['userId'];
+                                        if ($questionUserId == 1) { //1 will be replaced by sessionUserId
+                                            ?>
+                                            <div class="editDeleteBtn">
+                                                <div class="my-2">
+                                                    <a href="#" class="nav-link">
+                                                        <button class="btn buttonStyle">
+                                                            <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Question
+                                                        </button>
+                                                    </a>
+                                                </div>
+
+                                                <div class="my-2">
+                                                    <a href="#" class="nav-link">
+                                                        <button class="btn buttonStyle">
+                                                            <i class="fa-solid fa-trash-can me-2"></i></i>Delete Question
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                        <!-- if session user == user of question -->
+
                                     </div>
                                 </div>
                             </div>
