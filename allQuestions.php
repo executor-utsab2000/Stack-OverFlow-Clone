@@ -204,11 +204,11 @@ include './SQL/queries.php';
                                                 mins ago</span>
                                         </div>
 
-                                        <!-- if session user == user of question -->
+                                        <!--if session is active and  if session user == user of question -->
                                         <!-- links will contain backend Deletepage with question id as get request  -->
                                         <?php
                                         $questionUserId = $allQuestion['userId'];
-                                        if ($questionUserId == 1) { //1 will be replaced by sessionUserId
+                                        if ($questionUserId == 0) { //1 will be replaced by sessionUserId
                                             ?>
                                             <div class="editDeleteBtn">
                                                 <div class="my-2">
@@ -220,7 +220,8 @@ include './SQL/queries.php';
                                                 </div>
 
                                                 <div class="my-2">
-                                                    <a href="#" class="nav-link">
+                                                    <a href="Backend/Question/deleteQuestion.php?questionId=<?php echo $questionId ?>"
+                                                        class="nav-link">
                                                         <button class="btn buttonStyle">
                                                             <i class="fa-solid fa-trash-can me-2"></i></i>Delete Question
                                                         </button>
