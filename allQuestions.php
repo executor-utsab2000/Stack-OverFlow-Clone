@@ -17,7 +17,7 @@ include './SQL/queries.php';
 <body>
     <div class="container-fluid">
         <?php require './Frontend Components/navbar.php' ?>
-
+        <?php require './Frontend Components/backendMsg.php' ?>
         <!-- --------------------------------------------------------------------------- -->
 
         <div class="container allQuestions">

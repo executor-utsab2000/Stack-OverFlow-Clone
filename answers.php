@@ -48,7 +48,7 @@ $answerCount = mysqli_fetch_assoc(
 <body>
     <div class="container-fluid">
         <?php require './Frontend Components/navbar.php' ?>
-
+        <?php require './Frontend Components/backendMsg.php' ?>
         <!-- --------------------------------------------------------------------------- -->
 
         <!-- insert answer modal start -->
@@ -136,7 +136,8 @@ $answerCount = mysqli_fetch_assoc(
                             <i class="fa-regular fa-thumbs-up my-2"></i>
                             <i class="fa-regular fa-bookmark my-2"></i>
                         </div>
-                        <div class="answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolore quo
+                        <div class="answer">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolore quo
                             laboriosam repellat velit aut iusto officia nostrum quidem veritatis, similique voluptatum,
                             enim alias vel. In commodi magni sapiente ad vel? Dolorem soluta temporibus laudantium
                             recusandae facere corrupti, qui reiciendis fuga harum laborum necessitatibus aliquam
@@ -152,7 +153,14 @@ $answerCount = mysqli_fetch_assoc(
                             asperiores rem officiis beatae, autem cumque repellat deleniti ullam voluptatem, nisi
                             aliquam. Sequi repellendus quae ea maiores vel vero, consectetur omnis. Perferendis odit
                             explicabo quia commodi. Numquam enim nostrum nemo incidunt, sit commodi temporibus. Nemo
-                            placeat molestias ab odit, dolorum neque, corrupti dolore, animi ipsum minus quis.</div>
+                            placeat molestias ab odit, dolorum neque, corrupti dolore, animi ipsum minus quis.
+                            <div class="ansImg mt-3">
+                                <img src="https://codesandbox.io/_next/image?url=%2Fnew%2Fblog%2Fcodesandbox-an-online-react-editor%2F0.png&w=3840&q=75"
+                                    alt="" class="img-fluid">
+                            </div>
+                        </div>
+
+
                     </div>
                     <!-- answer repeatable part end-->
 
@@ -162,13 +170,24 @@ $answerCount = mysqli_fetch_assoc(
 
         </div>
 
+        <!--imgBigDisplay start  -->
 
+        <div class="imgBigDisplay d-none">
+            <button class="closeBtn" onclick="this.parentNode.classList.add('d-none')">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+            <div class="imgContainer">
+                <img src="" alt="" id="imgBig">
+            </div>
+        </div>
 
-
+        <!--imgBigDisplay end -->
 
     </div>
 </body>
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
+<script src=" Script/answerImgDisplay.js"></script>
+
 
 </html>

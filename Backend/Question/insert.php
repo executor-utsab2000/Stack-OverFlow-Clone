@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // echo $fullNewName;
 
     $fileSaveLocation = "../../Images/Question/$fullNewName";
-    $fileSaveToServer = move_uploaded_file($fileTmpPath, $fileSaveLocation);
+    // $fileSaveToServer = move_uploaded_file($fileTmpPath, $fileSaveLocation);
     // var_dump($fileSaveToServer);
 
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 '../../allQuestions.php',
                 'Question added successfully',
                 '<i class="fa-solid fa-check"></i>',
-                'bg-success'
+                'success'
             );
         }
     } else {
@@ -73,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($fileSize < $maxSize) {
 
                 if ($ifSupportedFileType) {
+                    $fileSaveToServer = move_uploaded_file($fileTmpPath, $fileSaveLocation);
 
                     if ($fileSaveToServer) {
 
@@ -88,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 '../../allQuestions.php',
                                 'Question added successfully',
                                 '<i class="fa-solid fa-check"></i>',
-                                'bg-success'
+                                'success'
                             );
                         }
                     }
@@ -97,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         '../../questionAdd.php',
                         'Improper file Type',
                         '<i class="fa-solid fa-x"></i>',
-                        'bg-danger'
+                        'danger'
                     );
                 }
 
@@ -107,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     '../../questionAdd.php',
                     'File too big . Max size 2MB',
                     '<i class="fa-solid fa-x"></i>',
-                    'bg-danger'
+                    'danger'
                 );
             }
 
@@ -117,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 '../../questionAdd.php',
                 'There was a problem in file upload try again afer some time',
                 '<i class="fa-solid fa-x"></i>',
-                'bg-danger'
+                'danger'
             );
         }
     }
@@ -136,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //     '../../questionAdd.php',
 //     'There was a problem in file upload try again afer some time',
 //     '<i class="fa-solid fa-x"></i>',
-//     'bg-danger'
+//     'danger'
 // );
 
 
