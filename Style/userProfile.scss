@@ -44,6 +44,35 @@
 
     }
 
+    .detailsSection {
+        margin-top: 2rem;
+        display: flex;
+
+
+        .leftMenu {
+            max-width: 15rem;
+            padding: 0.5rem 1rem;
+
+            button {
+                margin-bottom: 0.5rem;
+                font-size: 0.7rem;
+                color: #14213d;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            .active {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                background-color: #ced4da;
+            }
+        }
+
+        .rightPanel {
+            padding: 0.5rem 1rem;
+            width: 80%;
+        }
+    }
+
 
 
 
