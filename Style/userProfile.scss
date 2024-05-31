@@ -1,0 +1,79 @@
+.userProfile {
+    margin-top: 10rem;
+
+    .headerSection {
+        display: flex;
+        flex-wrap: wrap;
+
+        .imgContainer {
+            height: 8rem;
+            width: 8rem;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+            img {
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+
+        .userDetailsTop {
+            .nameTop {
+                font-weight: 800;
+                letter-spacing: 1px;
+                font-size: 2.5rem;
+            }
+
+            .userId {
+                font-weight: 800;
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+                color: #adb5bd;
+            }
+
+            .smallDetails {
+                color: #8b8c89;
+                font-weight: 700;
+                font-size: 0.8rem;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

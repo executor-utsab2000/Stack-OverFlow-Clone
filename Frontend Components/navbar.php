@@ -30,6 +30,17 @@
         font-weight: 700;
         font-size: 0.8rem;
     }
+
+    .navBar .btnS{
+        width: 8rem;
+        margin: 0.3rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        background-color: #38b000;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        color: #073b4c;
+    }
 </style>
 
 
@@ -73,8 +84,8 @@
                         </li>
 
                     </ul>
-                    <!-- <button class="btn btn-outline-success" type="submit">Login</button>
-                          <button class="btn btn-outline-success" type="submit">Sign Up</button> -->
+                    <!-- <button class="btn btn-outline-success btnS" type="click">Login</button>
+                    <button class="btn btn-outline-success btnS" type="click">Sign Up</button> -->
 
 
                     <span class="nav-item dropdown userAvtar">
@@ -83,7 +94,7 @@
                             <img src="https://i.pinimg.com/736x/09/24/a7/0924a7ef295741e916c8f42512bbe5bd.jpg" alt="">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="./userProfile.php"><i class="fa-solid fa-user me-2"></i> Profile</a></li>
                             <li><a class="dropdown-item" href="#"><i
                                         class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout</a></li>
                         </ul>
