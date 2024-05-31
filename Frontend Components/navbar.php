@@ -31,7 +31,7 @@
         font-size: 0.8rem;
     }
 
-    .navBar .btnS{
+    .navBar .btnS {
         width: 8rem;
         margin: 0.3rem;
         font-weight: 700;
@@ -84,6 +84,8 @@
                         </li>
 
                     </ul>
+
+                    <!-- if session active -->
                     <!-- <button class="btn btn-outline-success btnS" type="click">Login</button>
                     <button class="btn btn-outline-success btnS" type="click">Sign Up</button> -->
 
@@ -94,7 +96,8 @@
                             <img src="https://i.pinimg.com/736x/09/24/a7/0924a7ef295741e916c8f42512bbe5bd.jpg" alt="">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./userProfile.php"><i class="fa-solid fa-user me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="./userProfile.php"><i class="fa-solid fa-user me-2"></i>
+                                    Profile</a></li>
                             <li><a class="dropdown-item" href="#"><i
                                         class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout</a></li>
                         </ul>

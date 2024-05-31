@@ -7,20 +7,7 @@ $(document).ready(function(){
     console.log(insertAnswerModalBtn);
 
     insertAnswerModalBtn.addEventListener('click', ()=>{
-        // $.get(
-        //     "./Backend/sessionUserAuth.php" ,
-        //     function(data , status){
-        //         const datas= JSON.parse(data) ;
-        //       console.log(datas.ifActive);
-        //         if(datas.ifActive){
-        //             return
-        //         }
-        //         else{
-        //             location.href='index.php'
-        //         }
-        //     }
-        // )
-        sessionUserAuth('./index.php')
+        sessionUserAuth('./insertAnswer.php')
     })
 })
 
@@ -40,20 +27,7 @@ $(document).ready(function(){
     console.log(askQuestionBtn);
 
     askQuestionBtn.addEventListener('click', ()=>{
-        $.get(
-            "./Backend/sessionUserAuth.php" ,
-            function(data , status){
-                const datas= JSON.parse(data) ;
-              console.log(datas.ifActive);
-                if(datas.ifActive){
-                    location.href = './questionAdd.php'
-                }
-                else{
-                    location.href='index.php'
-                }
-            }
-        )
-        // sessionUserAuth('./index.php')
+        sessionUserAuth('./questionAdd.php')
     })
 })
 

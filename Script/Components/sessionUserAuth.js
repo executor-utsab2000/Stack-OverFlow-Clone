@@ -1,13 +1,13 @@
-export function sessionUserAuth(redirectLocation) {
+export function sessionUserAuth(targetLocation) {
   const backendUrl = "./Backend/sessionUserAuth.php";
 
   $.get(backendUrl, function (data, status) {
     const datas = JSON.parse(data);
-    console.log(datas);
+    // console.log(datas);
     if (datas.ifActive) {
-      return;
+      location.href = targetLocation;
     } else {
-      location.href = redirectLocation;
+      location.href = "./index.php";
     }
   });
 }

@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fullNewName = "$serverFileName.$fileExtension";
     // echo $fullNewName;
 
-    $fileSaveLocation = "../../Images/Question/$fullNewName";
+    $fileSaveLocation = "../../Images/Uploads/Question/$fullNewName";
     // $fileSaveToServer = move_uploaded_file($fileTmpPath, $fileSaveLocation);
     // var_dump($fileSaveToServer);
 

@@ -21,7 +21,7 @@ if ($_GET['questionId']) {
 
 
 
-    $deleteImg = unlink("../../Images/Question/$img");
+    $deleteImg = unlink("../../Images/Uploads/Question/$img");
     $deleteData = mysqli_query($connection, "DELETE FROM `question` WHERE `question id`= '$questionId'");
 
 

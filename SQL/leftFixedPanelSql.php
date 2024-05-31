@@ -34,9 +34,13 @@ $QueryExec4 = mysqli_query($connection, $questionCountQuery);
 $totalQuestions = mysqli_num_rows($QueryExec4);
 
 
-
-
-
+// last tab left panel
+$topicQuestionQuery = "select topics.`topic name` , count(question.`topic id`) as `questCount`
+from question left join topics 
+on question.`topic id` = topics.`topic id` 
+group by question.`topic id` 
+order by  count(question.`topic id`) desc limit 4;";
+$QueryExec7 = mysqli_query($connection, $topicQuestionQuery);
 
 
 

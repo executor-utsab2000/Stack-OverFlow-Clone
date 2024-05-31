@@ -11,7 +11,6 @@ $QueryExec6 = mysqli_query($connection, $anspageQuestionQuery);
 $questionData = mysqli_fetch_assoc($QueryExec6);
 // var_dump($questionData);
 
-$questionId = $questionData['question id'];
 $questionTitle = $questionData['question title'];
 $questionDescription = $questionData['question description'];
 $questionCreatedAt = $questionData['question created at'];
@@ -20,7 +19,7 @@ $userName = $questionData['username'];
 $questionScreenShot = $questionData['screenShot'];
 
 if ($userAvtar == '') {
-    $userAvtar = 'https://images.freeimages.com/image/previews/374/instabutton-png-design-5690390.png?fmt=webp&w=500';
+    $ifNoAvtar = 'https://images.freeimages.com/image/previews/374/instabutton-png-design-5690390.png?fmt=webp&w=500';
 }
 
 $answerCount = mysqli_fetch_assoc(
@@ -51,27 +50,6 @@ $answerCount = mysqli_fetch_assoc(
         <?php require './Frontend Components/backendMsg.php' ?>
         <!-- --------------------------------------------------------------------------- -->
 
-        <!-- insert answer modal start -->
-        <div class="modal fade " id="insertAnswerModal" tabindex="-1" aria-labelledby="insertAnswerModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="insertAnswerModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- insert answer modal end -->
-
         <div class="container allAnswers">
 
             <div class="row">
@@ -82,8 +60,7 @@ $answerCount = mysqli_fetch_assoc(
 
                 <div class="col-lg-10 offset-lg-2 rightPanelAnswers">
                     <div class="insertDiv">
-                        <button class="btn" data-bs-toggle="modal" data-bs-target="#insertAnswerModal"
-                            id="insertAnswerModalBtn">
+                        <button class="btn" id="insertAnswerModalBtn">
                             <i class="fa-regular fa-pen-to-square"></i>
                         </button>
                     </div>
@@ -103,8 +80,8 @@ $answerCount = mysqli_fetch_assoc(
                         if ($questionScreenShot != '') {
                             ?>
                             <div class="questionImgContainer">
-                                <img src="https://code.visualstudio.com/assets/docs/languages/javascript/auto-import-after.png"
-                                    alt="" class="imgFluid">
+                                <img src="./Images/Uploads/Question/<?php echo $questionScreenShot ?>" alt=""
+                                    class="img-fluid">
                             </div>
 
                         <?php } ?>
@@ -112,7 +89,7 @@ $answerCount = mysqli_fetch_assoc(
 
                         <div class="userDetails d-flex justify-content-end pe-3">
                             <img src="./Images/UI/line.svg" alt="" class="line">
-                            <img src=" <?php echo $userAvtar ?>" alt="" class="userDp">
+                            <img src=" <?php echo $ifNoAvtar ?>" alt="" class="userDp">
                             <?php echo $userName ?>
                         </div>
                         <div class="questionDetails">
@@ -128,40 +105,53 @@ $answerCount = mysqli_fetch_assoc(
 
 
                     <!-- answer repeatable part start-->
-                    <div class="answerContent">
-                        <div class="userDp">
-                            <img src="https://i.pinimg.com/236x/5d/35/c3/5d35c3084cc6afc27479ba340f27dc15.jpg" alt="">
-                        </div>
-                        <div class="functions my-auto">
-                            <i class="fa-regular fa-thumbs-up my-2"></i>
-                            <i class="fa-regular fa-bookmark my-2"></i>
-                        </div>
-                        <div class="answer">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolore quo
-                            laboriosam repellat velit aut iusto officia nostrum quidem veritatis, similique voluptatum,
-                            enim alias vel. In commodi magni sapiente ad vel? Dolorem soluta temporibus laudantium
-                            recusandae facere corrupti, qui reiciendis fuga harum laborum necessitatibus aliquam
-                            perferendis incidunt nemo enim voluptas optio adipisci deleniti cum dolore fugiat? Sequi sed
-                            nam, quidem ab consequatur tempore. Quasi error, magni aperiam maxime voluptatem omnis nisi
-                            ut dolor distinctio placeat minus doloribus deserunt soluta excepturi ipsa quidem tenetur
-                            ipsum non, eveniet dolorem. Harum magnam non voluptatem similique perferendis quisquam id
-                            sapiente dolor magni, distinctio quam quaerat expedita aliquam dolorem. Eveniet, ad quis
-                            deserunt inventore atque sequi eaque est, doloremque corrupti tempora ea praesentium maxime
-                            enim corporis! Maxime reprehenderit voluptates hic provident sed laudantium quo iure
-                            quibusdam. Assumenda voluptates corporis eum eius, est consequuntur magnam fuga delectus
-                            veritatis sunt provident itaque iure fugit nam. Aspernatur consequuntur, labore mollitia at
-                            asperiores rem officiis beatae, autem cumque repellat deleniti ullam voluptatem, nisi
-                            aliquam. Sequi repellendus quae ea maiores vel vero, consectetur omnis. Perferendis odit
-                            explicabo quia commodi. Numquam enim nostrum nemo incidunt, sit commodi temporibus. Nemo
-                            placeat molestias ab odit, dolorum neque, corrupti dolore, animi ipsum minus quis.
-                            <div class="ansImg mt-3">
-                                <img src="https://codesandbox.io/_next/image?url=%2Fnew%2Fblog%2Fcodesandbox-an-online-react-editor%2F0.png&w=3840&q=75"
-                                    alt="" class="img-fluid">
+                    <?php
+                    $answerQuery = "$answerQuery2 '$Question_Id'";
+                    $ansQueryExec = mysqli_query($connection, $answerQuery);
+                    // var_dump(mysqli_fetch_assoc($ansQueryExec));
+                    while ($answerData = mysqli_fetch_assoc($ansQueryExec)) {
+                        $answerId = $answerData['answer id'];
+                        $answer = $answerData['answer'];
+                        $ansImg = $answerData['answerImage'];
+                        $ansCreatedAt = $answerData['answer created at'];
+                        $ansUserName = $answerData['username'];
+                        $ansUserAvtar = $answerData['userAvtar'];
+
+                        if ($ansUserAvtar == '') {
+                            $ifNoAvtar = 'https://images.freeimages.com/image/previews/374/instabutton-png-design-5690390.png?fmt=webp&w=500';
+                        }
+                        ?>
+
+
+                        <div class="answerContent">
+                            <div class="userDp">
+                                <img src="<?php echo $ifNoAvtar ?>" alt="">
                             </div>
+                            <div class="functions my-auto">
+                                <i class="fa-regular fa-thumbs-up my-2"></i>
+                                <i class="fa-regular fa-bookmark my-2"></i>
+                            </div>
+                            <div class="answer"> <?php echo $answer ?>
+
+                                <?php
+
+                                if ($ansImg != '') {
+                                    ?>
+                                    <div class="ansImg mt-3">
+                                        <img src="./Images/Uploads/Answers/<?php echo $ansImg ?>" alt="" class=" img-fluid">
+                                    </div>
+
+                                <?php } ?>
+
+                                <div class="ansTime d-flex justify-content-end mt-4">
+                                    answered on <?php echo $ansCreatedAt ?>
+                                </div>
+                            </div>
+
+
                         </div>
 
-
-                    </div>
+                    <?php } ?>
                     <!-- answer repeatable part end-->
 
                 </div>
@@ -173,7 +163,7 @@ $answerCount = mysqli_fetch_assoc(
         <!--imgBigDisplay start  -->
 
         <div class="imgBigDisplay d-none">
-            <button class="closeBtn" onclick="this.parentNode.classList.add('d-none')">
+            <button class="closeBtn btn" onclick="this.parentNode.classList.add('d-none')">
                 <i class="fa-solid fa-circle-xmark"></i>
             </button>
             <div class="imgContainer">

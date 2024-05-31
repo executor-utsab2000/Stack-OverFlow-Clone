@@ -49,7 +49,7 @@ require './SQL/leftFixedPanelSql.php';
 
 <div class="containerLeft">
     <div class="header">Total Questions :</div>
-    <i class="fa-solid fa-angles-right"></i> 
+    <i class="fa-solid fa-angles-right"></i>
     <?php echo $totalQuestions ?>
 </div>
 
@@ -88,7 +88,7 @@ require './SQL/leftFixedPanelSql.php';
 
 <div class="containerLeft">
     <div class="header">Total Users :</div>
-    <i class="fa-solid fa-angles-right"></i> 
+    <i class="fa-solid fa-angles-right"></i>
     <?php echo $totalUsers ?>
 </div>
 
@@ -99,21 +99,23 @@ require './SQL/leftFixedPanelSql.php';
 <div class="containerLeft">
     <div class="header">Most Topics Questions :</div>
     <div class="subContainerLeft ms-3">
-        <div class="my-1">
-            <i class="fa-solid fa-caret-right"></i>
-            Topic : 10 Questions
-        </div>
-        <div class="my-1">
-            <i class="fa-solid fa-caret-right"></i>
-            Topic : 7 Questions
-        </div>
-        <div class="my-1">
-            <i class="fa-solid fa-caret-right"></i>
-            Topic : 5 Questions
-        </div>
-        <div class="my-1">
-            <i class="fa-solid fa-caret-right"></i>
-            Topic : 4 Questions
-        </div>
+        <table>
+            <?php
+            while ($mostQuest = mysqli_fetch_assoc($QueryExec7)) {
+                // var_dump($mostQuest);
+                $topicName = $mostQuest['topic name'];
+                $questCount = $mostQuest['questCount'];
+
+                echo '
+                    <tr>
+                        <td><i class="fa-solid fa-caret-right"></i></td>
+                        <td>' . $topicName . '</td>
+                        <td> : </td>
+                        <td>' . $questCount . ' Questions</td>
+                    </tr>
+            ';
+            }
+            ?>
+        </table>
     </div>
 </div>

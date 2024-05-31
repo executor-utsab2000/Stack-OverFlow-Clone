@@ -114,6 +114,11 @@
                     cursor: pointer;
                 }
             }
+
+            .ansTime {
+                font-weight: 700;
+                color: #778da9;
+            }
         }
 
 
@@ -133,23 +138,24 @@
     place-content: center;
 
     .closeBtn {
+        // border: 0;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
         i {
             font-size: 2rem;
             color: whitesmoke;
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
         }
     }
 
     .imgContainer {
-        background-color: #c1121f;
         width: 54vw;
         object-fit: contain;
         aspect-ratio: 3/2;
-        min-width: 360px ;
-        
-        img{
+        min-width: 360px;
+
+        img {
             object-fit: contain;
             aspect-ratio: 3/2;
             height: 100%;

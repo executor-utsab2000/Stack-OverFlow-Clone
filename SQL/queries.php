@@ -6,16 +6,17 @@ require './Backend/Components/connection.php';
 // questions.php
 
 if (isset($_GET['topic_Id'])) {
-    $questionSQL = "select 
+    $questionSQL = "SELECT 
                     question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
                     users.username , users.userAvtar 
-                    from question left join answer on question.`question id` = answer.`question id` join users on question.userId = users.userID 
+                    FROM question LEFT JOIN users ON question.userId = users.userID ;
                     where question.`topic id` = ;";
 } else {
-    $questionSQL = "select 
+    $questionSQL = "SELECT 
                     question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
                     users.username , users.userAvtar 
-                    from question left join answer on question.`question id` = answer.`question id` join users on question.userId = users.userID ;";
+                    FROM question LEFT JOIN users ON question.userId = users.userID ;
+;";
 }
 
 $QueryExec5 = mysqli_query($connection, $questionSQL);
@@ -42,7 +43,9 @@ $answerQuery1 = "select question.`question id`  , question.`question title`,ques
 
 
 
-
+$answerQuery2 = "select answer.`answer id` , answer.`answer` , answer.`answerImage` , answer.`answer created at`  ,
+                 users.username , users.userAvtar
+                from answer left join users on answer.`user id` = users.`userID` where answer.`question id`=";
 
 
 
