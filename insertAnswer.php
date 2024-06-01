@@ -1,3 +1,12 @@
+<?php
+
+if (!isset($_GET['questionId'])) {
+    header("location:./allQuestions.php");
+}
+
+$questionId = $_GET['questionId'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,15 +38,18 @@
                         <div class="header">Write a good question</div>
                         <div class="steps">Steps to Follow :</div>
                         <ul>
-                            <li>Write your question in brief</li>
-                            <li>Explain your issue</li>
-                            <li>Select Category</li>
-                            <li>Review your question and post it to the site.</li>
+                            <li>Please be sure to answer the question. Provide details and share your research!</li>
+                            <li>Making statements based on opinion; back them up with references or personal experience.
+                            </li>
+                            <li>Try to give image or images to support yor answer </li>
+                            <li>Maximum 5 images.</li>
                         </ul>
                     </div>
 
                     <form action="./Backend/Answer/insert.php" method="post" id="answerSubmit"
                         enctype="multipart/form-data">
+                        <input type="hidden" name="questionId" value="<?php echo $questionId ?>">
+                        <input type="hidden" name="currQuestUrl" id="currQuestUrl">
                         <div class="contentContainer mt-3 answerDescription">
                             <label for="answerDescription">Explain the solution to the problem asked </label>
                             <div class="labelDesc">
@@ -53,7 +65,7 @@
                             <div class="labelDesc">
                                 Select any image or screenshot of the error .Max Limit 5
                             </div>
-                            <input type="file" class="inputsFile" id="answerImg" name="answerImg[]" multiple/>
+                            <input type="file" class="inputsFile" id="answerImg" name="answerImg[]" multiple />
                             <div class="imgFormats text-danger ms-3">.webp , .jpg , .jpeg , .png . .avif only these
                                 formats are
                                 accepted and max size should be 2 MB (each image).</div>
@@ -72,4 +84,8 @@
 
 </body>
 <!-- <script src="./Script/provideAnswer.js"></script> -->
+<script>
+    document.getElementById('currQuestUrl').value = location.href
+</script>
+
 </html>

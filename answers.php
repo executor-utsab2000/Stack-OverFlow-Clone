@@ -60,7 +60,8 @@ $answerCount = mysqli_fetch_assoc(
 
                 <div class="col-lg-10 offset-lg-2 rightPanelAnswers">
                     <div class="insertDiv">
-                        <button class="btn" id="insertAnswerModalBtn">
+                        <input type="hidden" value="<?php echo $Question_Id ?>">
+                        <button class="btn" id="insertAnswer">
                             <i class="fa-regular fa-pen-to-square"></i>
                         </button>
                     </div>
