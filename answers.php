@@ -105,6 +105,13 @@ $answerCount = mysqli_fetch_assoc(
                     </div>
 
 
+
+
+
+
+
+
+
                     <!-- answer repeatable part start-->
                     <?php
                     $answerQuery = "$answerQuery2 '$Question_Id'";
@@ -124,36 +131,67 @@ $answerCount = mysqli_fetch_assoc(
                         ?>
 
 
-                        <div class="answerContent">
-                            <div class="userDp">
-                                <img src="<?php echo $ifNoAvtar ?>" alt="">
-                            </div>
-                            <div class="functions my-auto">
-                                <i class="fa-regular fa-thumbs-up my-2"></i>
-                                <i class="fa-regular fa-bookmark my-2"></i>
-                            </div>
-                            <div class="answer"> <?php echo $answer ?>
 
-                                <?php
+                        <div class="answerContentContainer">
+                            <div class="answerContent">
+                                <div class="userDp">
+                                    <img src="<?php echo $ifNoAvtar ?>" alt="">
+                                </div>
+                                <div class="functions my-auto">
+                                    <i class="fa-regular fa-thumbs-up my-2"></i>
+                                    <i class="fa-regular fa-bookmark my-2"></i>
+                                </div>
+                                <div class="answer"> <?php echo $answer ?>
 
-                                if ($ansImg != '') {
-                                    ?>
-                                    <div class="ansImg mt-3">
-                                        <img src="./Images/Uploads/Answers/<?php echo $ansImg ?>" alt="" class=" img-fluid">
+                                    <?php
+
+                                    if ($ansImg != '') {
+                                        ?>
+                                        <div class="ansImg mt-3">
+                                            <img src="./Images/Uploads/Answers/<?php echo $ansImg ?>" alt="" class=" img-fluid">
+                                        </div>
+
+                                    <?php } ?>
+
+                                    <div class="ansTime d-flex justify-content-end mt-4">
+                                        answered on <?php echo $ansCreatedAt ?>
                                     </div>
-
-                                <?php } ?>
-
-                                <div class="ansTime d-flex justify-content-end mt-4">
-                                    answered on <?php echo $ansCreatedAt ?>
                                 </div>
                             </div>
 
+                            <?php
+                            // if user logged in has posted the answer 
+                            $questionUserId = $answerData['user id'];
+                            if ($questionUserId == 0) { //1 will be replaced by sessionUserId
+                                ?>
+                                <div class="editDeleteBtn">
+                                    <div class="my-2">
+                                        <a href="#" class="nav-link">
+                                            <button class="btn buttonStyle">
+                                                <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Answer
+                                            </button>
+                                        </a>
+                                    </div>
 
+                                    <div class="my-2">
+                                        <a href="Backend/Answer/deleteAnswer.php?questionId=<?php echo $Question_Id ?>"
+                                            class="nav-link">
+                                            <button class="btn buttonStyle">
+                                                <i class="fa-solid fa-trash-can me-2"></i></i>Delete Answer
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
 
                     <?php } ?>
                     <!-- answer repeatable part end-->
+
+
+
+
+
 
                 </div>
             </div>
@@ -179,6 +217,18 @@ $answerCount = mysqli_fetch_assoc(
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
 <script src=" Script/answerImgDisplay.js"></script>
+<script>
 
+    const closeBtn = document.getElementById('closeBtn');
+
+    closeBtn.addEventListener('click', () => {
+        const newUrl = location.href.split('?')[0]
+        // location.href = newUrl
+        console.log(nre);
+    })
+
+
+
+</script>
 
 </html>

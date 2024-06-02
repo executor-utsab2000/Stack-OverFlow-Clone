@@ -16,8 +16,21 @@ if ($_GET['questionId']) {
     // var_dump($questionData);
     $img = $questionData['screenShot'];
 
+    $res = mysqli_query($connection, "SELECT * FROM `answer` WHERE `question id`= '$questionId'");
+
+    $ifAllAnsImgDeleted = true;
+    while ($ansimage = mysqli_fetch_assoc($res)) {
+
+        $ansImg = $ansimage['answerImage'];
+        $answerImgDelete = unlink("../../Images/Uploads/Answers/$ansImg");
+
+        if (!$answerImgDelete) {
+            $ifAllAnsImgDeleted = false;
+            break;
+        }
 
 
+    }
 
 
 
@@ -25,7 +38,7 @@ if ($_GET['questionId']) {
     $deleteData = mysqli_query($connection, "DELETE FROM `question` WHERE `question id`= '$questionId'");
 
 
-    if ($deleteData && $deleteImg) {
+    if ($deleteData && $deleteImg && $ifAllAnsImgDeleted) {
         headerFunction(
             '../../allQuestions.php',
             'Question deleted successfully',

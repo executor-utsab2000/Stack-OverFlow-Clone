@@ -43,9 +43,9 @@ $answerQuery1 = "select question.`question id`  , question.`question title`,ques
 
 
 
-$answerQuery2 = "select answer.`answer id` , answer.`answer` , answer.`answerImage` , answer.`answer created at`  ,
-                 users.username , users.userAvtar
-                from answer left join users on answer.`user id` = users.`userID` where answer.`question id`=";
+$answerQuery2 = "select answer.`answer id` ,answer.`user id`, answer.`answer` , answer.`answerImage` , answer.`answer created at`  ,
+                users.username , users.userAvtar
+                from answer left join users on answer.`user id` = users.`userID` where answer.`question id`="
 
 
 
