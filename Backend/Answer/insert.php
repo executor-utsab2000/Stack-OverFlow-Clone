@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($fileSize == 0) {
         $insertAnswerSqlNoImg = "INSERT INTO `answer` (`answer id`, `question id`, `user id`, `answer`)
                                 VALUES 
-                                ('$ansId', '$questionId', '1', '$answer')";
+                                ('$ansId', '$questionId', '0', '$answer')";
         $queryNoImgExec = mysqli_query($connection, $insertAnswerSqlNoImg);
         if ($queryNoImgExec) {
             header("location:../../answers.php?$qdParam");
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $insertQuestionSql = "INSERT INTO `answer` 
                                                 (`answer id`, `question id`, `user id`, `answer`, `answerImage`) 
                                                 VALUES 
-                                                ('$ansId', '$questionId', '1', '$answer', '$fullNewName')";
+                                                ('$ansId', '$questionId', '0', '$answer', '$fullNewName')";
 
                         $queryExec = mysqli_query($connection, $insertQuestionSql);
 

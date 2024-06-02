@@ -114,7 +114,7 @@ $answerCount = mysqli_fetch_assoc(
 
                     <!-- answer repeatable part start-->
                     <?php
-                    $answerQuery = "$answerQuery2 '$Question_Id'";
+                    $answerQuery = "$answerQuery2 '$Question_Id' order by answer.`answer created at` desc";
                     $ansQueryExec = mysqli_query($connection, $answerQuery);
                     // var_dump(mysqli_fetch_assoc($ansQueryExec));
                     while ($answerData = mysqli_fetch_assoc($ansQueryExec)) {
@@ -159,6 +159,9 @@ $answerCount = mysqli_fetch_assoc(
                                 </div>
                             </div>
 
+
+
+
                             <?php
                             // if user logged in has posted the answer 
                             $questionUserId = $answerData['user id'];
@@ -166,21 +169,25 @@ $answerCount = mysqli_fetch_assoc(
                                 ?>
                                 <div class="editDeleteBtn">
                                     <div class="my-2">
-                                        <a href="#" class="nav-link">
-                                            <button class="btn buttonStyle">
+                                        <form action="./Backend/Answer/.php" method="post">
+                                            <input type="hidden" id="ansId" value="<?php echo $answerId ?>">
+                                            <input type="hidden" class="currUrl" name="currUrl">
+                                            <button class="btn buttonStyle" type="submit" id="editAnswer">
                                                 <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Answer
                                             </button>
-                                        </a>
+                                        </form>
                                     </div>
 
                                     <div class="my-2">
-                                        <a href="Backend/Answer/deleteAnswer.php?questionId=<?php echo $Question_Id ?>"
-                                            class="nav-link">
-                                            <button class="btn buttonStyle">
+                                        <form action="./Backend/Answer/deleteAnswer.php" method="post">
+                                            <input type="hidden" id="ansId" name="ansId" value="<?php echo $answerId ?>">
+                                            <input type="hidden" class="currUrl" name="currUrl">
+                                            <button class="btn buttonStyle" type="submit" id="deleteAnswer">
                                                 <i class="fa-solid fa-trash-can me-2"></i></i>Delete Answer
                                             </button>
-                                        </a>
+                                        </form>
                                     </div>
+
                                 </div>
                             <?php } ?>
                         </div>
@@ -217,18 +224,11 @@ $answerCount = mysqli_fetch_assoc(
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
 <script src=" Script/answerImgDisplay.js"></script>
+<!-- <script src=" Script/deleteEditAnswer.js"></script> -->
 <script>
-
-    const closeBtn = document.getElementById('closeBtn');
-
-    closeBtn.addEventListener('click', () => {
-        const newUrl = location.href.split('?')[0]
-        // location.href = newUrl
-        console.log(nre);
-    })
-
-
-
+    const currUrl = document.querySelectorAll('.currUrl');
+    console.log(currUrl);
+    currUrl.forEach(elm => elm.value = location.href.split('?')[1])
 </script>
 
 </html>
