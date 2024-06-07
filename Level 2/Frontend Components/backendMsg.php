@@ -42,15 +42,3 @@ if (isset($_GET['message'])) {
 
 
 
-<script>
-
-    const closeBtn = document.getElementById('closeBtn');
-
-    closeBtn.addEventListener('click', () => {
-        const newUrl = location.href.split('?')[0]
-        location.href = newUrl
-    })
-
-
-
-</script>

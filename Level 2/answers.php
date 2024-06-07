@@ -9,7 +9,6 @@ $Question_Id = $_GET['questionId'];
 $anspageQuestionQuery = "$answerQuery1 '$Question_Id' ";
 $QueryExec6 = mysqli_query($connection, $anspageQuestionQuery);
 $questionData = mysqli_fetch_assoc($QueryExec6);
-// var_dump($questionData);
 
 $questionTitle = $questionData['question title'];
 $questionDescription = $questionData['question description'];
@@ -28,7 +27,7 @@ $answerCount = mysqli_fetch_assoc(
         "SELECT COUNT(*) from answer WHERE `question id`='$Question_Id';"
     )
 )['COUNT(*)'];
-// var_dump($answerCount);
+
 ?>
 
 
@@ -59,12 +58,17 @@ $answerCount = mysqli_fetch_assoc(
 
 
                 <div class="col-lg-10 offset-lg-2 rightPanelAnswers">
+
+                    <!-- insert Answer Btn  -->
                     <div class="insertDiv">
                         <input type="hidden" value="<?php echo $Question_Id ?>">
                         <button class="btn" id="insertAnswer">
                             <i class="fa-regular fa-pen-to-square"></i>
                         </button>
                     </div>
+                    <!-- insert Answer Btn close  -->
+
+
 
                     <!-- content -->
                     <div class="question">
@@ -132,6 +136,7 @@ $answerCount = mysqli_fetch_assoc(
 
 
 
+                        <!-- answer Content start -->
                         <div class="answerContentContainer">
                             <div class="answerContent">
                                 <div class="userDp">
@@ -194,7 +199,7 @@ $answerCount = mysqli_fetch_assoc(
 
                     <?php } ?>
                     <!-- answer repeatable part end-->
-
+                    <!-- answer Content start -->
 
 
 

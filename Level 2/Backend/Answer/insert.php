@@ -10,11 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $questionId = $_POST['questionId'];
     $currQuestUrl = $_POST['currQuestUrl'];
     $answer = htmlspecialchars($_POST['answerDescription']);
+
+
     $currQuestUrl = $_POST['currQuestUrl'];
     $qdParam = explode("?", $currQuestUrl)[1];
+    $qdParamKey = explode('=', $qdParam)[0];
+    $qdParamValue = explode('=', $qdParam)[1];
+    // echo $qdParam;
+
+    if (strpos($qdParam, 'message') == true) {
+        $qdParamValue = explode('&', $qdParamValue)[0];
+    }
+
 
     // file
-    // var_dump($_FILES);
     $fileName = $_FILES['answerImg']['name'];
     $fileTmpPath = $_FILES['answerImg']['tmp_name'];
     $fileSize = $_FILES['answerImg']['size'];
@@ -22,24 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
-    // echo $fileExtension;
     $supportedFileType = ['webp', 'jpg', 'jpeg ', 'png', 'avif'];
     $ifSupportedFileType = in_array($fileExtension, $supportedFileType);
-    // var_dump($ifSupportedFileType);
     $maxSize = 1024 * 1024 * 2;
 
     $serverFileName = uniqid("$ansId-img-");
     $fullNewName = "$serverFileName.$fileExtension";
-    // echo $fullNewName;
 
     $fileSaveLocation = "../../Images/Uploads/Answers/$fullNewName";
-    // $fileSaveToServer = move_uploaded_file($fileTmpPath, $fileSaveLocation);
-    // var_dump($fileSaveToServer);
-
-
-
-
-
 
 
 
@@ -49,7 +48,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 ('$ansId', '$questionId', '0', '$answer')";
         $queryNoImgExec = mysqli_query($connection, $insertAnswerSqlNoImg);
         if ($queryNoImgExec) {
-            header("location:../../answers.php?$qdParam");
+            headerFunction(
+                '../../answers.php',
+                [
+                    "$qdParamKey" => "$qdParamValue",
+                    'message' => 'Answer added Successfully',
+                    'icon' => '<i class="fa-solid fa-check"></i>',
+                    'colorClass' => 'success'
+                ]
+            );
         }
     } else {
 
@@ -63,28 +70,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if ($fileSaveToServer) {
 
                         $insertQuestionSql = "INSERT INTO `answer` 
-                                                (`answer id`, `question id`, `user id`, `answer`, `answerImage`) 
-                                                VALUES 
-                                                ('$ansId', '$questionId', '0', '$answer', '$fullNewName')";
+                                                    (`answer id`, `question id`, `user id`, `answer`, `answerImage`) 
+                                                    VALUES 
+                                                    ('$ansId', '$questionId', '0', '$answer', '$fullNewName')";
 
                         $queryExec = mysqli_query($connection, $insertQuestionSql);
 
                         if ($queryExec) {
-                            header("location:../../answers.php?$qdParam");
+                            headerFunction(
+                                '../../answers.php',
+                                [
+                                    "$qdParamKey" => "$qdParamValue",
+                                    'message' => 'Answer added Successfully',
+                                    'icon' => '<i class="fa-solid fa-check"></i>',
+                                    'colorClass' => 'success'
+                                ]
+                            );
                         }
                     }
                 } else {
-                    header("location:../../insertAnswer.php?$qdParam");
+                    headerFunction(
+                        '../../insertAnswer.php',
+                        [
+                            "$qdParamKey" => "$qdParamValue",
+                            'message' => 'File type not supported',
+                            'icon' => '<i class="fa-solid fa-x"></i>',
+                            'colorClass' => 'danger'
+                        ]
+                    );
                 }
 
 
             } else {
-                header("location:../../insertAnswer.php?$qdParam");
+                headerFunction(
+                    '../../insertAnswer.php',
+                    [
+                        "$qdParamKey" => "$qdParamValue",
+                        'message' => 'File size must be within 2MB',
+                        'icon' => '<i class="fa-solid fa-x"></i>',
+                        'colorClass' => 'danger'
+                    ]
+                );
             }
 
 
         } else {
-            header("location:../../insertAnswer.php?$qdParam");
+            headerFunction(
+                '../../insertAnswer.php',
+                [
+                    "$qdParamKey" => "$qdParamValue",
+                    'message' => 'Error in Image Upload',
+                    'icon' => '<i class="fa-solid fa-x"></i>',
+                    'colorClass' => 'danger'
+                ]
+            );
         }
     }
 

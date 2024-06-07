@@ -1,12 +1,19 @@
 <?php
 
-function headerFunction($location, $msg = '', $icon = '', $colorClass = '')
+
+function headerFunction($location, $assoctativeArrayParams = '')
 {
-    header("location:$location?message=$msg&icon=$icon&colorClass=$colorClass");
+    $assoctativeArrayParamsUrl = http_build_query($assoctativeArrayParams);
+
+    header("location:$location?$assoctativeArrayParamsUrl");
 }
 
 
 
 
-
 ?>
+<!--
+ message=$msg&
+ icon=$icon&
+ colorClass=$colorClass
+ -->

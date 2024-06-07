@@ -28,8 +28,6 @@ if ($_GET['questionId']) {
             $ifAllAnsImgDeleted = false;
             break;
         }
-
-
     }
 
 
@@ -41,14 +39,18 @@ if ($_GET['questionId']) {
     if ($deleteData && $deleteImg && $ifAllAnsImgDeleted) {
         headerFunction(
             '../../allQuestions.php',
-            'Question deleted successfully',
-            '<i class="fa-solid fa-check"></i>',
-            'success'
+            [
+                'message' => 'Question deleted successfully',
+                'icon' => '<i class="fa-solid fa-check"></i>',
+                'colorClass' => 'success'
+            ]
         );
     }
 
 } else {
-    header("location:../../allQuestions.php");
+    headerFunction(
+        '../../allQuestions.php',
+    );
 }
 
 

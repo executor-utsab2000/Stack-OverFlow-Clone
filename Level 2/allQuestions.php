@@ -182,10 +182,11 @@ include './SQL/queries.php';
                             <div class="col-12 my-2">
                                 <div class="row">
                                     <div class="col-2 questionsleftPanel">
+                                        <input type="hidden" name="questionId" value="<?php echo $questionId ?>">
                                         <div class="my-2"><?php echo $answerCount ?> Answers</div>
                                         <div class="my-2">0 Likes</div>
                                         <div class="my-auto">
-                                            <button class="btn buttonStyle">
+                                            <button class="btn buttonStyle saveQuestion">
                                                 <i class="fa-regular fa-bookmark me-2"></i>Save Question
                                             </button>
                                         </div>
@@ -250,6 +251,8 @@ include './SQL/queries.php';
 
     </div>
     <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
+    <script src="Script/questions.js" type="module"></script>
+
 </body>
 
 </html>

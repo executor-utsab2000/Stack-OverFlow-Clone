@@ -61,9 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($queryNoImgExec) {
             headerFunction(
                 '../../allQuestions.php',
-                'Question added successfully',
-                '<i class="fa-solid fa-check"></i>',
-                'success'
+                [
+                    'message' => 'Question added successfully',
+                    'icon' => '<i class="fa-solid fa-check"></i>',
+                    'colorClass' => 'success'
+                ]
             );
         }
     } else {
@@ -87,18 +89,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         if ($queryExec) {
                             headerFunction(
                                 '../../allQuestions.php',
-                                'Question added successfully',
-                                '<i class="fa-solid fa-check"></i>',
-                                'success'
+                                [
+                                    'message' => 'Question added successfully',
+                                    'icon' => '<i class="fa-solid fa-check"></i>',
+                                    'colorClass' => 'success'
+                                ]
                             );
                         }
                     }
                 } else {
                     headerFunction(
                         '../../questionAdd.php',
-                        'Improper file Type',
-                        '<i class="fa-solid fa-x"></i>',
-                        'danger'
+                        [
+                            'message' => 'Improper file Type',
+                            'icon' => '<i class="fa-solid fa-x"></i>',
+                            'colorClass' => 'danger'
+                        ]
                     );
                 }
 
@@ -106,9 +112,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 headerFunction(
                     '../../questionAdd.php',
-                    'File too big . Max size 2MB',
-                    '<i class="fa-solid fa-x"></i>',
-                    'danger'
+                    [
+                        'message' => 'File too big . Max size 2MB',
+                        'icon' => '<i class="fa-solid fa-x"></i>',
+                        'colorClass' => 'danger'
+                    ]
                 );
             }
 
@@ -116,9 +124,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             headerFunction(
                 '../../questionAdd.php',
-                'There was a problem in file upload try again afer some time',
-                '<i class="fa-solid fa-x"></i>',
-                'danger'
+                [
+                    'message' => 'There was a problem in file upload try again afer some time',
+                    'icon' => '<i class="fa-solid fa-x"></i>',
+                    'colorClass' => 'danger'
+                ]
             );
         }
     }
