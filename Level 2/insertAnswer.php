@@ -65,7 +65,7 @@ $questionId = $_GET['questionId'];
                             <div class="labelDesc">
                                 Select any image or screenshot of the error .Max Limit 5
                             </div>
-                            <input type="file" class="inputsFile" id="answerImg" name="answerImg" />
+                            <input type="file" class="inputsFile" id="answerImg" name="answerImg[]" multiple />
                             <div class="imgFormats text-danger ms-3">.webp , .jpg , .jpeg , .png . .avif only these
                                 formats are
                                 accepted and max size should be 2 MB (each image).</div>

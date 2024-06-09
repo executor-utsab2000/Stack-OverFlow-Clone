@@ -108,6 +108,10 @@
                 }
 
                 .ansImg {
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+
                     img {
                         height: 6rem;
                         width: 8rem;

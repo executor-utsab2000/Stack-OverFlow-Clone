@@ -153,7 +153,15 @@ $answerCount = mysqli_fetch_assoc(
                                     if ($ansImg != '') {
                                         ?>
                                         <div class="ansImg mt-3">
-                                            <img src="./Images/Uploads/Answers/<?php echo $ansImg ?>" alt="" class=" img-fluid">
+                                            <?php
+                                            $noOfImgs = count(json_decode($ansImg));
+                                            for ($i = 0; $i < $noOfImgs; $i++) {
+                                                ?>
+
+                                                <!-- image code will go here  -->
+
+                                            <?php } ?>
+
                                         </div>
 
                                     <?php } ?>
