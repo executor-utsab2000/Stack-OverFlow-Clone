@@ -7,8 +7,8 @@ require '../Components/headerFunction.php';
 
 $answerId = $_POST['ansId'];
 $currUrlParam = $_POST['currUrl'];
-echo $urlParamKey = explode('=', explode('&', $currUrlParam)[0])[0];
-echo $urlParamValue = explode('=', explode('&', $currUrlParam)[0])[1];
+$urlParamKey = explode('=', explode('&', $currUrlParam)[0])[0];
+$urlParamValue = explode('=', explode('&', $currUrlParam)[0])[1];
 
 
 
@@ -17,9 +17,13 @@ $answerImage = mysqli_fetch_assoc($getAnsImageQueryExe)['answerImage'];
 // var_dump($answerImage);
 
 
+
+
 if ($answerImage != '') {
-    $imgDelete = unlink("../../Images/Uploads/Answers/$answerImage");
-    // var_dump($imgDelete);
+
+    foreach (json_decode($answerImage) as $imgs) {
+        $imgDelete = unlink("../../Images/Uploads/Answers/$imgs");
+    }
 
     if ($imgDelete) {
 

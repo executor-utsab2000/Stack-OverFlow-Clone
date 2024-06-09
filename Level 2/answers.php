@@ -157,7 +157,8 @@ $answerCount = mysqli_fetch_assoc(
                                             $imgs = json_decode($ansImg);
                                             for ($i = 0; $i < count($imgs); $i++) {
                                                 ?>
-                                            <img src="Images/Uploads/Answers/<?php echo $imgs[$i] ?>" alt="" class="img-fluid m-3">
+                                                <img src="Images/Uploads/Answers/<?php echo $imgs[$i] ?>" alt=""
+                                                    class="img-fluid m-3">
 
 
                                             <?php } ?>

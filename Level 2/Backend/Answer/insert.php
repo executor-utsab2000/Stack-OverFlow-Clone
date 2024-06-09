@@ -109,8 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             [
                 "$qdParamKey" => "$qdParamValue",
                 'message' => 'Maximum 5 files can be posted',
-                'icon' => '<i class="fa-solid fa-check"></i>',
-                'colorClass' => 'success'
+                'icon' => '<i class="fa-solid fa-x"></i>',
+                'colorClass' => 'danger'
             ]
         );
     }
