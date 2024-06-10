@@ -37,8 +37,3 @@ if (isset($_GET['message'])) {
     </div>
 
 <?php } ?>
-
-
-
-
-

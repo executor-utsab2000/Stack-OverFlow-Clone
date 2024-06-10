@@ -3,7 +3,7 @@ import { sessionUserAuth } from "./Components/sessionUserAuth.js";
 
 $(document).ready(function () {
   const saveQuestion = document.querySelectorAll(".saveQuestion");
-  console.log(saveQuestion);
+  // console.log(saveQuestion);
 
   saveQuestion.forEach((elm) => {
     elm.addEventListener("click", () => {

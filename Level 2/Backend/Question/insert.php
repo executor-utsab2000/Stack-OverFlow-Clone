@@ -15,9 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-
-
-
     // file
     // var_dump($_FILES);
     $fileName = $_FILES['questionImg']['name'];
@@ -27,26 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
-    // echo $fileExtension;
     $supportedFileType = ['webp', 'jpg', 'jpeg ', 'png', 'avif'];
+
     $ifSupportedFileType = in_array($fileExtension, $supportedFileType);
-    // var_dump($ifSupportedFileType);
     $maxSize = 1024 * 1024 * 2;
 
     $serverFileName = uniqid("$questionId-img-");
     $fullNewName = "$serverFileName.$fileExtension";
-    // echo $fullNewName;
 
     $fileSaveLocation = "../../Images/Uploads/Question/$fullNewName";
-    // $fileSaveToServer = move_uploaded_file($fileTmpPath, $fileSaveLocation);
-    // var_dump($fileSaveToServer);
-
-
-
-
-
-
-
 
 
 

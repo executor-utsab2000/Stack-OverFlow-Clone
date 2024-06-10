@@ -86,6 +86,7 @@ $questionId = $_GET['questionId'];
 <!-- <script src="./Script/provideAnswer.js"></script> -->
 <script>
     document.getElementById('currQuestUrl').value = location.href
+    
 </script>
 
 </html>
