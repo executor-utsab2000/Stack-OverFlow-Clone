@@ -96,6 +96,6 @@
     </div>
   </div>
 </body>
-<script src="./Script/askQuestion.js"></script>
+<script src="./Script/Question Scripts/askQuestion.js"></script>
 
 </html>

@@ -251,7 +251,7 @@ include './SQL/queries.php';
 
     </div>
     <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
-    <script src="Script/questions.js" type="module"></script>
+    <script src="Script/Question Scripts/questions.js" type="module"></script>
     <script src="Script/Url Change BackendMsg/noParameterGetMsg.changeUrl.js" type="module"></script>
 
 </body>

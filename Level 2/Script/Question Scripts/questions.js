@@ -1,4 +1,4 @@
-import { sessionUserAuth } from "./Components/sessionUserAuth.js";
+import { sessionUserAuth } from "../Components/sessionUserAuth.js";
 // ask a question btn
 
 $(document).ready(function () {
@@ -8,8 +8,10 @@ $(document).ready(function () {
   saveQuestion.forEach((elm) => {
     elm.addEventListener("click", () => {
       const questionId = elm.parentNode.parentNode.firstElementChild.value;
-    //   console.log(questionId);
-      sessionUserAuth(`./Backend/Question/questionBookMarked.back.php?questionId=${questionId}`)
+      //   console.log(questionId);
+      sessionUserAuth(
+        `./Backend/Question/questionBookMarked.back.php?questionId=${questionId}`
+      );
     });
   });
 });

@@ -237,7 +237,7 @@ $answerCount = mysqli_fetch_assoc(
 </body>
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
-<script src=" Script/answerImgDisplay.js"></script>
+<script src=" Script/Answer Scripts/answerImgDisplay.js"></script>
 <script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
 
 </html>
