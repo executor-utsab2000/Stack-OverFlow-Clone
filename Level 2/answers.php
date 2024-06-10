@@ -238,11 +238,6 @@ $answerCount = mysqli_fetch_assoc(
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
 <script src=" Script/answerImgDisplay.js"></script>
-<!-- <script src=" Script/deleteEditAnswer.js"></script> -->
-<script>
-    const currUrl = document.querySelectorAll('.currUrl');
-    console.log(currUrl);
-    currUrl.forEach(elm => elm.value = location.href.split('?')[1])
-</script>
+<script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
 
 </html>

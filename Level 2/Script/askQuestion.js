@@ -10,7 +10,7 @@ questionSubmit.addEventListener("submit", (e) => {
       e.preventDefault();
       //   console.log(inputs[i].parentElement.children[0].innerHTML);
       const alertxtQuestion = inputs[i].parentElement.children[0].innerHTML;
-      alert("Enter "+ alertxtQuestion);
+      alert("Enter " + alertxtQuestion);
       break;
     }
   }

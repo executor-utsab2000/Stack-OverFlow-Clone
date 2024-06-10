@@ -83,10 +83,7 @@ $questionId = $_GET['questionId'];
     </div>
 
 </body>
-<!-- <script src="./Script/provideAnswer.js"></script> -->
-<script>
-    document.getElementById('currQuestUrl').value = location.href
-    
-</script>
+<script src="./Script/provideAnswer.js"></script>
+<script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
 
 </html>
