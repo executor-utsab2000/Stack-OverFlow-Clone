@@ -2,6 +2,9 @@ const answerSubmit = document.getElementById("answerSubmit");
 // console.log(answerSubmit);
 document.getElementById("currQuestUrl").value = window.location.href;
 
+
+
+
 const inputs = answerSubmit.querySelectorAll(".inputs");
 console.log(inputs);
 
