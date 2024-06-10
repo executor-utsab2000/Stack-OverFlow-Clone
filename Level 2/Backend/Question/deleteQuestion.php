@@ -2,7 +2,7 @@
 
 // if session active and question id is send by get req
 
-if ($_GET['questionId']) {
+if (isset($_GET['questionId'])) {
 
     require '../Components/headerFunction.php';
     require '../Components/connection.php';
@@ -13,58 +13,73 @@ if ($_GET['questionId']) {
     $questionQuery = "SELECT * FROM question WHERE `question id`= '$questionId'";
     $queryExec = mysqli_query($connection, $questionQuery);
     $questionData = mysqli_fetch_assoc($queryExec);
-    var_dump($questionData);
+    // var_dump($questionData);
+
+    $questionImg = $questionData['screenShot'];
 
 
+    if ($questionImg == NULL) {
 
-    //     $img = $questionData['screenShot'];
+        $res = mysqli_query($connection, "SELECT * FROM `answer` WHERE `question id`= '$questionId'");
+        while ($answer = mysqli_fetch_assoc($res)) {
+            // var_dump($answer);
+            if ($answer['answerImage'] != NULL) {
+                $answerImage = json_decode($answer['answerImage']);
+                foreach ($answerImage as $img) {
+                    unlink("../../Images/Uploads/Answers/$img");
+                }
+                ;
+            }
 
-    //     $res = mysqli_query($connection, "SELECT * FROM `answer` WHERE `question id`= '$questionId'");
+            $deleteQuestion = mysqli_query($connection, "DELETE FROM question WHERE `question`.`question id` = '$questionId'");
+            if ($deleteQuestion) {
+                headerFunction(
+                    '../../allQuestions.php',
+                    [
+                        'message' => 'Question Deleted Successfully',
+                        'icon' => '<i class="fa-solid fa-check"></i>',
+                        'colorClass' => 'success'
+                    ]
+                );
+            }
 
-    //     $ifAllAnsImgDeleted = true;
-//     while ($ansimage = mysqli_fetch_assoc($res)) {
+        }
+    }
 
-    //         $ansImg = $ansimage['answerImage'];
-//         $answerImgDelete = unlink("../../Images/Uploads/Answers/$ansImg");
+    // if question img
+    else {
 
-    //         if (!$answerImgDelete) {
-//             $ifAllAnsImgDeleted = false;
-//             break;
-//         }
-//     }
+        unlink("../../Images/Uploads/Question/$questionImg");
+
+        $res = mysqli_query($connection, "SELECT * FROM `answer` WHERE `question id`= '$questionId'");
+        while ($answer = mysqli_fetch_assoc($res)) {
+            // var_dump($answer);
+            if ($answer['answerImage'] != NULL) {
+                $answerImage = json_decode($answer['answerImage']);
+                foreach ($answerImage as $img) {
+                    unlink("../../Images/Uploads/Answers/$img");
+                }
+                ;
+            }
+
+            $deleteQuestion = mysqli_query($connection, "DELETE FROM question WHERE `question`.`question id` = '$questionId'");
+            if ($deleteQuestion) {
+                headerFunction(
+                    '../../allQuestions.php',
+                    [
+                        'message' => 'Question Deleted Successfully',
+                        'icon' => '<i class="fa-solid fa-check"></i>',
+                        'colorClass' => 'success'
+                    ]
+                );
+            }
+
+        }
+    }
 
 
-
-    //     $deleteImg = unlink("../../Images/Uploads/Question/$img");
-//     $deleteData = mysqli_query($connection, "DELETE FROM `question` WHERE `question id`= '$questionId'");
-
-
-    //     if ($deleteData && $deleteImg && $ifAllAnsImgDeleted) {
-//         headerFunction(
-//             '../../allQuestions.php',
-//             [
-//                 'message' => 'Question deleted successfully',
-//                 'icon' => '<i class="fa-solid fa-check"></i>',
-//                 'colorClass' => 'success'
-//             ]
-//         );
-//     }
-
-    // } else {
-//     headerFunction(
-//         '../../allQuestions.php',
-//     );
+    // ----end  ----
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
