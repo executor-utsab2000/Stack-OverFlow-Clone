@@ -85,5 +85,4 @@ $questionId = $_GET['questionId'];
 </body>
 <script src="Script/Answer Scripts/provideAnswer.js"></script>
 <script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
-
 </html>

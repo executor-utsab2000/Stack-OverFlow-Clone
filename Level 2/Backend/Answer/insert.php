@@ -4,24 +4,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     require '../Components/connection.php';
     require '../Components/headerFunction.php';
+    require '../Components/urlSplit.php';
 
     $ansId = uniqid('answer-');
 
     $questionId = $_POST['questionId'];
-    $currQuestUrl = $_POST['currQuestUrl'];
     $answer = htmlspecialchars($_POST['answerDescription']);
 
 
-    $currQuestUrl = $_POST['currQuestUrl'];
-    $qdParam = explode("?", $currQuestUrl)[1];
-    $qdParamKey = explode('=', $qdParam)[0];
-    $qdParamValue = explode('=', $qdParam)[1];
-    // echo $qdParam;
+    // $currUrlParam = $_POST['currQuestUrl'];
+    // $urlParamKey = explode('=', explode('?', $currUrlParam)[1])[0];
+    // $urlParamValue = explode('=', explode('?', $currUrlParam)[1])[1];
 
-    if (strpos($qdParam, 'message') == true) {
-        $qdParamValue = explode('&', $qdParamValue)[0];
-    }
+    // if (strpos($currUrlParam, 'message') == true) {
+    //     $urlParamKey = explode('=', explode('&', explode('?', $currUrlParam)[1])[0])[0];
+    //     $urlParamValue = explode('=', explode('&', explode('?', $currUrlParam)[1])[0])[1];
+    // }
 
+    $currUrlParam = splitUrl($_POST['currQuestUrl']);
+    $urlParamKey = $currUrlParam['urlParamKey'];
+    $urlParamValue = $currUrlParam['urlParamValue'];
+    echo "$urlParamKey   $urlParamValue";
+
+    echo "$urlParamKey   $urlParamValue";
+    var_dump($currUrlParam);
 
     // file
 
@@ -40,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             headerFunction(
                 '../../answers.php',
                 [
-                    "$qdParamKey" => "$qdParamValue",
+                    "$urlParamKey" => "$urlParamValue",
                     'message' => 'Answer added Successfully',
                     'icon' => '<i class="fa-solid fa-check"></i>',
                     'colorClass' => 'success'
@@ -51,13 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         for ($i = 0; $i < $totalFileCount; $i++) {
             $fileName = $_FILES['answerImg']['name'][$i];
-            // $fileTmpPath = $_FILES['answerImg']['tmp_name'][$i];
             $fileSize = $_FILES['answerImg']['size'][$i];
             $fileError = $_FILES['answerImg']['error'][$i];
 
 
             $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
-            $supportedFileType = ['webp', 'jpg', 'jpeg ', 'png', 'avif'];
+            $supportedFileType = ['webp', 'jpg', 'jpeg', 'png', 'avif'];
             $ifSupportedFileType = in_array($fileExtension, $supportedFileType);
             $maxSize = 1024 * 1024 * 2;
 
@@ -69,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         headerFunction(
                             '../../insertAnswer.php',
                             [
-                                "$qdParamKey" => "$qdParamValue",
+                                "$urlParamKey" => "$urlParamValue",
                                 'message' => "File  with name $fileSize size must be within 2MB",
                                 'icon' => '<i class="fa-solid fa-x"></i>',
                                 'colorClass' => 'danger'
@@ -81,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     headerFunction(
                         '../../insertAnswer.php',
                         [
-                            "$qdParamKey" => "$qdParamValue",
+                            "$urlParamKey" => "$urlParamValue",
                             'message' => "File with name $fileName type not supported",
                             'icon' => '<i class="fa-solid fa-x"></i>',
                             'colorClass' => 'danger'
@@ -93,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 headerFunction(
                     '../../insertAnswer.php',
                     [
-                        "$qdParamKey" => "$qdParamValue",
+                        "$urlParamKey" => "$urlParamValue",
                         'message' => 'Error in Image Upload',
                         'icon' => '<i class="fa-solid fa-x"></i>',
                         'colorClass' => 'danger'
@@ -107,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         headerFunction(
             '../../insertAnswer.php',
             [
-                "$qdParamKey" => "$qdParamValue",
+                "$urlParamKey" => "$urlParamValue",
                 'message' => 'Maximum 5 files can be posted',
                 'icon' => '<i class="fa-solid fa-x"></i>',
                 'colorClass' => 'danger'
@@ -147,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             headerFunction(
                 '../../answers.php',
                 [
-                    "$qdParamKey" => "$qdParamValue",
+                    "$urlParamKey" => "$urlParamValue",
                     'message' => 'Answer added Successfully',
                     'icon' => '<i class="fa-solid fa-check"></i>',
                     'colorClass' => 'success'

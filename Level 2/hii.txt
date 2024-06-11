@@ -30,3 +30,21 @@ question insert
 question update
 answer insert
 answer update
+
+question insert 
+question delete
+
+answer insert 
+answer delete
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Done =>
+
+question insert 
+question delete
+question bookmarked
+
+answer insert 
+answer delete
+

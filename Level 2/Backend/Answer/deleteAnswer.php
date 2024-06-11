@@ -2,13 +2,19 @@
 
 require '../Components/connection.php';
 require '../Components/headerFunction.php';
+require '../Components/urlSplit.php';
 
 // var_dump($_POST);
 
 $answerId = $_POST['ansId'];
-$currUrlParam = $_POST['currUrl'];
-$urlParamKey = explode('=', explode('&', $currUrlParam)[0])[0];
-$urlParamValue = explode('=', explode('&', $currUrlParam)[0])[1];
+
+
+
+$currUrlParam = splitUrl($_POST['currUrl']);
+$urlParamKey = $currUrlParam['urlParamKey'];
+$urlParamValue = $currUrlParam['urlParamValue'];
+// echo "$urlParamKey   $urlParamValue";
+
 
 
 

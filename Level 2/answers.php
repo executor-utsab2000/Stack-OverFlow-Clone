@@ -143,8 +143,9 @@ $answerCount = mysqli_fetch_assoc(
                                     <img src="<?php echo $ifNoAvtar ?>" alt="">
                                 </div>
                                 <div class="functions my-auto">
-                                    <i class="fa-regular fa-thumbs-up my-2"></i>
-                                    <i class="fa-regular fa-bookmark my-2"></i>
+                                    <input type="hidden" value="<?php echo $answerId ?>">
+                                    <button class=" btn fa-regular fa-thumbs-up my-2"></button>
+                                    <button class=" btn fa-regular fa-bookmark my-2 saveAnswer"></button>
                                 </div>
                                 <div class="answer"> <?php echo $answer ?>
 
@@ -238,6 +239,7 @@ $answerCount = mysqli_fetch_assoc(
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
 <script src=" Script/Answer Scripts/answerImgDisplay.js"></script>
+<script src=" Script/Answer Scripts/answers.js" type="module"></script>
 <script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
 
 </html>

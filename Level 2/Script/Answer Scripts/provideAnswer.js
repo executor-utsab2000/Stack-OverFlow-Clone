@@ -1,13 +1,9 @@
 const answerSubmit = document.getElementById("answerSubmit");
-// console.log(answerSubmit);
-document.getElementById("currQuestUrl").value = window.location.href;
-
-
-
-
+document.getElementById("currQuestUrl").value = location.href;
 const inputs = answerSubmit.querySelectorAll(".inputs");
 console.log(inputs);
 
+console.log(answerSubmit);
 answerSubmit.addEventListener("submit", (e) => {
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].value.trim().length == 0) {
