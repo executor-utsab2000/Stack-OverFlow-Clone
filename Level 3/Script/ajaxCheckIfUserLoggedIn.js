@@ -10,17 +10,9 @@ $(document).ready(function () {
   });
 });
 
-
-
-
-
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
-
-
-
-
 
 $(document).ready(function () {
   const insertAnswer = document.getElementById("insertAnswer");
@@ -33,4 +25,71 @@ $(document).ready(function () {
   });
 });
 
-// to get data from object  parse is needed
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+// bokmarkQuestion
+
+$(document).ready(function () {
+  const saveQuestion = document.querySelectorAll(".saveQuestion");
+  // console.log(saveQuestion);
+
+  saveQuestion.forEach((elm) => {
+    elm.addEventListener("click", () => {
+      const questionId =
+        elm.parentNode.parentNode.parentNode.parentNode.parentNode
+          .firstElementChild.value;
+      // console.log(questionId);
+      sessionUserAuth(
+        `./Backend/Question/questionBookMarked.back.php?questionId=${questionId}`
+      );
+    });
+  });
+});
+
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+// delete question
+
+$(document).ready(function () {
+  const deleteQuestion = document.querySelectorAll(".deleteQuestion");
+  // console.log(deleteQuestion);
+
+  deleteQuestion.forEach((elm) => {
+    elm.addEventListener("click", () => {
+      const questionId =
+        elm.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+          .firstElementChild.value;
+      // console.log(questionId);
+      sessionUserAuth(
+          `./Backend/Question/deleteQuestion.php?questionId=${questionId}`
+        );
+    });
+  });
+});
+
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+// delete question
+
+$(document).ready(function () {
+  const editQuestion = document.querySelectorAll(".editQuestion");
+  // console.log(editQuestion);
+
+  editQuestion.forEach((elm) => {
+    elm.addEventListener("click", () => {
+      const questionId =
+        elm.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+          .firstElementChild.value;
+      console.log(questionId);
+      // sessionUserAuth(
+      //     `./Backend/Question/updateQuestion.php?questionId=${questionId}`
+      //   );
+    });
+  });
+});

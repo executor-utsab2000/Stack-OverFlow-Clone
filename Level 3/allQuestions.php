@@ -179,10 +179,10 @@ include './SQL/queries.php';
                         ?>
 
                         <div class="row questionContainer">
+                            <input type="hidden" name="questionId" value="<?php echo $questionId ?>">
                             <div class="col-12 my-2">
                                 <div class="row">
                                     <div class="col-2 questionsleftPanel">
-                                        <input type="hidden" name="questionId" value="<?php echo $questionId ?>">
                                         <div class="my-2"><?php echo $answerCount ?> Answers</div>
                                         <div class="my-2">0 Likes</div>
                                         <div class="my-auto">
@@ -213,20 +213,15 @@ include './SQL/queries.php';
                                             ?>
                                             <div class="editDeleteBtn">
                                                 <div class="my-2">
-                                                    <a href="#" class="nav-link">
-                                                        <button class="btn buttonStyle">
-                                                            <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Question
-                                                        </button>
-                                                    </a>
+                                                    <button class="btn buttonStyle editQuestion">
+                                                        <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Question
+                                                    </button>
                                                 </div>
 
                                                 <div class="my-2">
-                                                    <a href="Backend/Question/deleteQuestion.php?questionId=<?php echo $questionId ?>"
-                                                        class="nav-link">
-                                                        <button class="btn buttonStyle">
-                                                            <i class="fa-solid fa-trash-can me-2"></i></i>Delete Question
-                                                        </button>
-                                                    </a>
+                                                    <button class="btn buttonStyle deleteQuestion">
+                                                        <i class="fa-solid fa-trash-can me-2"></i></i>Delete Question
+                                                    </button>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -251,7 +246,6 @@ include './SQL/queries.php';
 
     </div>
     <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
-    <script src="Script/Question Scripts/questions.js" type="module"></script>
     <script src="Script/Url Change BackendMsg/noParameterGetMsg.changeUrl.js" type="module"></script>
 
 </body>

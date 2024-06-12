@@ -169,46 +169,6 @@
     }
 }
 
-.imgBigDisplay {
-    margin-top: 6.5rem;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 2;
-    height: 87vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    display: grid;
-    place-content: center;
-
-    .closeBtn {
-        // border: 0;
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-
-        i {
-            font-size: 2rem;
-            color: whitesmoke;
-        }
-    }
-
-    .imgContainer {
-        width: 54vw;
-        object-fit: contain;
-        aspect-ratio: 3/2;
-        min-width: 360px;
-
-        img {
-            object-fit: contain;
-            aspect-ratio: 3/2;
-            height: 100%;
-            width: 100%;
-        }
-
-    }
-
-}
 
 
 
