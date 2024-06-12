@@ -1,0 +1,198 @@
+.allAnswers {
+    margin-top: 8rem;
+
+
+    .rightPanelAnswers {
+        .insertDiv {
+            position: fixed;
+            bottom: 2rem;
+            right: 2.5rem;
+
+            i {
+                padding: 0.8rem;
+                background-color: #c1121f;
+                color: yellow;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                font-size: 1.2rem;
+                border-radius: 50%;
+            }
+        }
+
+        .question {
+            border-radius: 10px;
+            border-bottom: #212121 2px solid;
+            padding-bottom: 1.5rem;
+            letter-spacing: 1px;
+
+            .questionTitle {
+                font-weight: 800;
+                font-size: 1.1rem;
+                color: #1b263b;
+            }
+
+            .questionIssueDesc {
+                margin-top: 2rem;
+                font-weight: 700;
+                font-size: 0.8rem;
+                color: #778da9;
+            }
+
+            .questionImgContainer {
+                width: 100%;
+                margin: 1rem 0;
+
+                img {
+                    aspect-ratio: 3/2;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+
+            .userDetails {
+                margin-top: 1rem;
+                font-weight: 700;
+                font-size: 0.8rem;
+
+                .userDp {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    margin-right: 0.3rem;
+                }
+
+                .line {
+                    width: 50px;
+                    height: 20px;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            .questionDetails {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .questionDetailsSub {
+                    text-align: center;
+                    margin-top: 2.5rem;
+                    font-weight: 700;
+                    font-size: 0.7rem;
+                }
+            }
+
+        }
+
+        .answerContentContainer {
+            border-bottom: #b6babf 2px solid;
+            margin-top: 2rem;
+            padding: 1rem 0;
+
+            .answerContent {
+                display: flex;
+                justify-content: space-between;
+
+                .functions {}
+
+                .userDp>img {
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }
+
+                .answer {
+                    margin-left: 2rem;
+                    font-weight: 700;
+                    font-size: 0.7rem;
+                    text-align: justify;
+                }
+
+                .ansImg {
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+
+                    img {
+                        height: 6rem;
+                        width: 8rem;
+                        border-radius: 10px;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        cursor: pointer;
+                    }
+                }
+
+                .ansTime {
+                    font-weight: 700;
+                    color: #778da9;
+                }
+            }
+
+            .editDeleteBtn {
+                display: flex;
+                justify-content: space-around;
+
+                button {
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    color: #778da9;
+                }
+            }
+
+        }
+
+    }
+}
+
+.imgBigDisplay {
+    margin-top: 6.5rem;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    height: 87vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+
+    .closeBtn {
+        // border: 0;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        i {
+            font-size: 2rem;
+            color: whitesmoke;
+        }
+    }
+
+    .imgContainer {
+        width: 54vw;
+        object-fit: contain;
+        aspect-ratio: 3/2;
+        min-width: 360px;
+
+        img {
+            object-fit: contain;
+            aspect-ratio: 3/2;
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+@media (min-width:991.5px) {
+    .rightPanelAnswers {
+        padding: 0.5rem 4rem;
+    }
+}
