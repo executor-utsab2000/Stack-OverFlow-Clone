@@ -194,7 +194,7 @@ include './SQL/queries.php';
 
                                     <div class="col-10">
                                         <div class="questionTitle">
-                                            <a href="answers.php?questionId=<?php echo $questionId ?>" class="nav-link">
+                                            <a href="allAnswers.php?questionId=<?php echo $questionId ?>" class="nav-link">
                                                 <?php echo $questionTitle ?></a>
                                         </div>
                                         <div class="questionIssue"> <?php echo $questionDesc ?> </div>

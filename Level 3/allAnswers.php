@@ -40,7 +40,7 @@ $answerCount = mysqli_fetch_assoc(
     <title>Document</title>
 
     <?php require './Frontend Components/cdnLinks.php' ?>
-    <link rel="stylesheet" href="Style/answers.scss" />
+    <link rel="stylesheet" href="Style/allAnswers.scss" />
 </head>
 
 <body>
@@ -129,49 +129,47 @@ $answerCount = mysqli_fetch_assoc(
                         $ansUserName = $answerData['username'];
                         $ansUserAvtar = $answerData['userAvtar'];
 
+                        $imgsCount = 'No';
+                        if ($ansImg != NULL) {
+                            $imgsCount = count(json_decode($ansImg));
+                        }
+
                         if ($ansUserAvtar == '') {
                             $ifNoAvtar = 'https://images.freeimages.com/image/previews/374/instabutton-png-design-5690390.png?fmt=webp&w=500';
                         }
+
                         ?>
 
 
-
                         <!-- answer Content start -->
-                        <div class="answerContentContainer">
+                        <div class="answerContainer">
                             <div class="answerContent">
-                                <div class="userDp">
-                                    <img src="<?php echo $ifNoAvtar ?>" alt="">
+
+                                <div class="leftPanel">
+                                    <div class="userDp">
+                                        <img src="<?php echo $ifNoAvtar ?>" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="functions my-auto">
+                                        <input type="hidden" value="<?php echo $answerId ?>">
+                                        <button class=" btn fa-regular fa-thumbs-up my-2"></button>
+                                        <button class=" btn fa-regular fa-bookmark my-2 saveAnswer"></button>
+                                    </div>
                                 </div>
-                                <div class="functions my-auto">
-                                    <input type="hidden" value="<?php echo $answerId ?>">
-                                    <button class=" btn fa-regular fa-thumbs-up my-2"></button>
-                                    <button class=" btn fa-regular fa-bookmark my-2 saveAnswer"></button>
-                                </div>
-                                <div class="answer"> <?php echo $answer ?>
 
-                                    <?php
-
-                                    if ($ansImg != '') {
-                                        ?>
-                                        <div class="ansImg mt-3">
-                                            <?php
-                                            $imgs = json_decode($ansImg);
-                                            for ($i = 0; $i < count($imgs); $i++) {
-                                                ?>
-                                                <img src="Images/Uploads/Answers/<?php echo $imgs[$i] ?>" alt=""
-                                                    class="img-fluid m-3">
-
-
-                                            <?php } ?>
-
-                                        </div>
-
-                                    <?php } ?>
-
+                                <div class="rightPanel">
+                                    <div class="answerDesc"><?php echo $answer ?></div>
+                                    <div class="images"><?php echo  $imgsCount ?> Images Available </div>
                                     <div class="ansTime d-flex justify-content-end mt-4">
                                         answered on <?php echo $ansCreatedAt ?>
                                     </div>
+                                    <div class="readMore d-flex justify-content-end mt-2">
+                                        <a href="question.Answers.php?questionId=<?php echo $Question_Id ?>&answerId=<?php echo $answerId ?>"
+                                            class="nav-link">
+                                            <button class="btn">𝗥𝗲𝗮𝗱 𝗶𝗻 𝗗𝗲𝘁𝗮𝗶𝗹𝘀</button>
+                                        </a>
+                                    </div>
                                 </div>
+
                             </div>
 
 
@@ -223,14 +221,14 @@ $answerCount = mysqli_fetch_assoc(
 
         <!--imgBigDisplay start  -->
 
-        <div class="imgBigDisplay d-none">
+        <!-- <div class="imgBigDisplay d-none">
             <button class="closeBtn btn" onclick="this.parentNode.classList.add('d-none')">
                 <i class="fa-solid fa-circle-xmark"></i>
             </button>
             <div class="imgContainer">
                 <img src="" alt="" id="imgBig">
             </div>
-        </div>
+        </div> -->
 
         <!--imgBigDisplay end -->
 
@@ -238,7 +236,7 @@ $answerCount = mysqli_fetch_assoc(
 </body>
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
-<script src=" Script/Answer Scripts/answerImgDisplay.js"></script>
+<!-- <script src=" Script/Answer Scripts/answerImgDisplay.js"></script> -->
 <script src=" Script/Answer Scripts/answers.js" type="module"></script>
 <script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
 

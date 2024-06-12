@@ -23,6 +23,7 @@
             border-bottom: #212121 2px solid;
             padding-bottom: 1.5rem;
             letter-spacing: 1px;
+            
 
             .questionTitle {
                 font-weight: 800;
@@ -82,7 +83,7 @@
 
         }
 
-        .answerContentContainer {
+        .answerContainer {
             border-bottom: #b6babf 2px solid;
             margin-top: 2rem;
             padding: 1rem 0;
@@ -91,43 +92,65 @@
                 display: flex;
                 justify-content: space-between;
 
-                .functions {}
-
-                .userDp>img {
-                    height: 25px;
-                    width: 25px;
-                    border-radius: 50%;
-                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                }
-
-                .answer {
-                    margin-left: 2rem;
-                    font-weight: 700;
-                    font-size: 0.7rem;
-                    text-align: justify;
-                }
-
-                .ansImg {
-                    display: flex;
-                    flex-wrap: wrap;
-                    
-
-                    img {
-                        height: 6rem;
-                        width: 8rem;
-                        border-radius: 10px;
-                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                        cursor: pointer;
+                .leftPanel {
+                    .userDp>img {
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                     }
                 }
 
-                .ansTime {
-                    font-weight: 700;
-                    color: #778da9;
+                .rightPanel {
+                    margin-left: 2rem;
+
+                    .answerDesc {
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                        text-align: justify;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        /* Limit to 2 lines */
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-height: 4rem;
+                        /* Adjust based on line-height */
+                        margin-top: 1rem;
+                        color: #4e5154;
+                    }
+
+                    .images {
+                        margin-top: 1rem;
+                        color: #4e5154;
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                    }
+
+                    .ansTime {
+                        font-weight: 700;
+                        color: #778da9;
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                    }
+                    .readMore{
+                        a{
+                            button{
+                               width: 8rem;
+                               font-weight: 750;
+                               font-size: 0.6rem; 
+                               padding: 0.5rem ;
+                               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                               background-color: #ffb703;
+                               letter-spacing: 1px;
+                            }
+                        }
+                    }
                 }
             }
 
             .editDeleteBtn {
+                margin-top: 0.5rem;
                 display: flex;
                 justify-content: space-around;
 
@@ -137,8 +160,11 @@
                     color: #778da9;
                 }
             }
-
         }
+
+
+
+
 
     }
 }
