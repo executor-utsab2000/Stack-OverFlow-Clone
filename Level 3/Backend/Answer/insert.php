@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $queryNoImgExec = mysqli_query($connection, $insertAnswerSqlNoImg);
         if ($queryNoImgExec) {
             headerFunction(
-                '../../answers.php',
+                '../../allAnswers.php',
                 [
                     "$urlParamKey" => "$urlParamValue",
                     'message' => 'Answer added Successfully',
@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $response = mysqli_query($connection, $insertSQl);
         if ($response) {
             headerFunction(
-                '../../answers.php',
+                '../../allAnswers.php',
                 [
                     "$urlParamKey" => "$urlParamValue",
                     'message' => 'Answer added Successfully',

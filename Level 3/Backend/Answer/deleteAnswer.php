@@ -39,7 +39,7 @@ if ($answerImage != '') {
 
         if ($imgDelete && $QueryExec) {
             headerFunction(
-                '../../answers.php',
+                '../../allAnswers.php',
                 [
                     "$urlParamKey" => "$urlParamValue",
                     'message' => 'Answer Deleted Successfully',
@@ -57,7 +57,7 @@ if ($answerImage != '') {
 
     if ($QueryExec) {
         headerFunction(
-            '../../answers.php',
+            '../../allAnswers.php',
             [
                 "$urlParamKey" => "$urlParamValue",
                 'message' => 'Answer Deleted Successfully',
@@ -70,7 +70,7 @@ if ($answerImage != '') {
 ?>
 
 <!-- headerFunction(
-                '../../answers.php',
+                '../../allAnswers.php',
                 [
                     "$qdParamKey" => "$qdParamValue",
                     'message' => 'Answer added Successfully',
