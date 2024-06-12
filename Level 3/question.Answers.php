@@ -123,11 +123,78 @@ if ($ansUserAvtar == '') {
                         </div>
                     </div>
                     <!-- question container end -->
-                    
+
                     <!-- answer container end -->
-                            <!-- answer content -->
+                    <div class="answerContainer">
+                        <div class="answerContent">
+
+                            <div class="leftPanel">
+                                <div class="userDp">
+                                    <img src="<?php echo $ifNoAvtar ?>" alt="" class="img-fluid">
+                                </div>
+                                <div class="functions my-auto">
+                                    <input type="hidden" value="<?php echo $answerId ?>">
+                                    <button class=" btn fa-regular fa-thumbs-up my-2"></button>
+                                    <button class=" btn fa-regular fa-bookmark my-2 saveAnswer"></button>
+                                </div>
+                            </div>
+
+                            <div class="rightPanel">
+                                <div class="answerDesc"><?php echo $answer ?></div>
+                                <div class="ansImg">
+                                    <?php
+                                    if ($ansImg != NULL) {
+                                        $imgs = json_decode($ansImg);
+
+                                        foreach ($imgs as $ansImages) {
+                                            echo "
+                                            <img src='Images/Uploads/Answers/$ansImages' alt='' class='imgs img-fluid'>
+                                            ";
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                                <div class="ansTime d-flex justify-content-end mt-4">
+                                    answered on <?php echo $ansCreatedAt ?>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <?php
+                        // if user logged in has posted the answer 
+                        $questionUserId = $answerData['user id'];
+                        if ($questionUserId == 0) { //1 will be replaced by sessionUserId
+                            ?>
+                            <div class="editDeleteBtn">
+                                <div class="my-2">
+                                    <form action="./Backend/Answer/.php" method="post">
+                                        <input type="hidden" id="ansId" value="<?php echo $answerId ?>">
+                                        <input type="hidden" class="currUrl" name="currUrl">
+                                        <button class="btn buttonStyle" type="submit" id="editAnswer">
+                                            <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Answer
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <div class="my-2">
+                                    <form action="./Backend/Answer/deleteAnswer.php" method="post">
+                                        <input type="hidden" id="ansId" name="ansId" value="<?php echo $answerId ?>">
+                                        <input type="hidden" class="currUrl" name="currUrl">
+                                        <button class="btn buttonStyle" type="submit" id="deleteAnswer">
+                                            <i class="fa-solid fa-trash-can me-2"></i></i>Delete Answer
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        <?php } ?>
+                    </div>
                     <!-- answer container end -->
-                    
+
 
 
                 </div>
@@ -135,22 +202,26 @@ if ($ansUserAvtar == '') {
 
         </div>
 
+
+
+
+
         <!--imgBigDisplay start  -->
 
-        <!-- <div class="imgBigDisplay d-none">
+        <div class="imgBigDisplay d-none">
             <button class="closeBtn btn" onclick="this.parentNode.classList.add('d-none')">
                 <i class="fa-solid fa-circle-xmark"></i>
             </button>
             <div class="imgContainer">
                 <img src="" alt="" id="imgBig">
             </div>
-        </div> -->
+        </div>
 
         <!--imgBigDisplay end -->
 
     </div>
 </body>
 
-<!-- <script src=" Script/Answer Scripts/answerImgDisplay.js"></script> -->
+<script src=" Script/Answer Scripts/answerImgDisplay.js"></script>
 
 </html>

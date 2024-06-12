@@ -71,11 +71,135 @@
 
 
         }
-        
+
+        .answerContainer {
+            border-bottom: #b6babf 2px solid;
+            margin-top: 3rem;
+            padding: 1rem 0;
+
+            .answerContent {
+                display: flex;
+                justify-content: space-between;
+
+                .leftPanel {
+                    .userDp>img {
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    }
+                }
+
+                .rightPanel {
+                    margin-left: 2rem;
+
+                    .answerDesc {
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                        text-align: justify;
+                        margin-top: 1rem;
+                        color: #4e5154;
+                    }
+
+                    .ansImg {
+                        margin-top: 3rem;
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-wrap: wrap;
+
+                        .imgs {
+                            margin: 0.5rem;
+                            height: 6rem;
+                            width: 8rem;
+                            border-radius: 10px;
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        }
+                    }
+
+
+
+                    .ansTime {
+                        font-weight: 700;
+                        color: #778da9;
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                    }
+
+                    .readMore {
+                        a {
+                            button {
+                                width: 8rem;
+                                font-weight: 750;
+                                font-size: 0.6rem;
+                                padding: 0.5rem;
+                                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                                background-color: #ffb703;
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .editDeleteBtn {
+                margin-top: 0.5rem;
+                display: flex;
+                justify-content: space-around;
+
+                button {
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    color: #778da9;
+                }
+            }
+        }
+
     }
 }
 
 
+
+.imgBigDisplay {
+    margin-top: 6.5rem;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    height: 87vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+
+    .closeBtn {
+        // border: 0;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        i {
+            font-size: 2rem;
+            color: whitesmoke;
+        }
+    }
+
+    .imgContainer {
+        width: 54vw;
+        object-fit: contain;
+        aspect-ratio: 3/2;
+        min-width: 360px;
+
+        img {
+            object-fit: contain;
+            aspect-ratio: 3/2;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+    }
+
+}
 
 
 
