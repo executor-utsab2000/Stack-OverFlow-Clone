@@ -152,7 +152,7 @@ $answerCount = mysqli_fetch_assoc(
                                     <div class="functions my-auto">
                                         <input type="hidden" value="<?php echo $answerId ?>">
                                         <button class=" btn fa-regular fa-thumbs-up my-2"></button>
-                                        <button class=" btn fa-regular fa-bookmark my-2 saveAnswer"></button>
+                                        <!-- <button class=" btn fa-regular fa-bookmark my-2 saveAnswer"></button> -->
                                     </div>
                                 </div>
 
@@ -180,7 +180,7 @@ $answerCount = mysqli_fetch_assoc(
                             $questionUserId = $answerData['user id'];
                             if ($questionUserId == 0) { //1 will be replaced by sessionUserId
                                 ?>
-                                <div class="editDeleteBtn d-none">
+                                <div class="editDeleteBtn d-none">  
                                     <div class="my-2">
                                         <form action="./Backend/Answer/.php" method="post">
                                             <input type="hidden" id="ansId" value="<?php echo $answerId ?>">

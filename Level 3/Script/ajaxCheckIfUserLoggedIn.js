@@ -14,6 +14,7 @@ $(document).ready(function () {
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 
+// insert Answer
 $(document).ready(function () {
   const insertAnswer = document.getElementById("insertAnswer");
   // console.log(insertAnswer);
@@ -75,7 +76,7 @@ $(document).ready(function () {
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 
-// delete question
+// edit question
 
 $(document).ready(function () {
   const editQuestion = document.querySelectorAll(".editQuestion");
