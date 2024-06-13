@@ -158,7 +158,7 @@ $answerCount = mysqli_fetch_assoc(
 
                                 <div class="rightPanel">
                                     <div class="answerDesc"><?php echo $answer ?></div>
-                                    <div class="images"><?php echo  $imgsCount ?> Images Available </div>
+                                    <div class="images"><?php echo $imgsCount ?> Images Available </div>
                                     <div class="ansTime d-flex justify-content-end mt-4">
                                         answered on <?php echo $ansCreatedAt ?>
                                     </div>
@@ -180,7 +180,7 @@ $answerCount = mysqli_fetch_assoc(
                             $questionUserId = $answerData['user id'];
                             if ($questionUserId == 0) { //1 will be replaced by sessionUserId
                                 ?>
-                                <div class="editDeleteBtn">
+                                <div class="editDeleteBtn d-none">
                                     <div class="my-2">
                                         <form action="./Backend/Answer/.php" method="post">
                                             <input type="hidden" id="ansId" value="<?php echo $answerId ?>">
@@ -219,24 +219,11 @@ $answerCount = mysqli_fetch_assoc(
 
         </div>
 
-        <!--imgBigDisplay start  -->
-
-        <!-- <div class="imgBigDisplay d-none">
-            <button class="closeBtn btn" onclick="this.parentNode.classList.add('d-none')">
-                <i class="fa-solid fa-circle-xmark"></i>
-            </button>
-            <div class="imgContainer">
-                <img src="" alt="" id="imgBig">
-            </div>
-        </div> -->
-
-        <!--imgBigDisplay end -->
 
     </div>
 </body>
 
 <script src="Script/ajaxCheckIfUserLoggedIn.js" type="module"></script>
-<!-- <script src=" Script/Answer Scripts/answerImgDisplay.js"></script> -->
 <script src=" Script/Answer Scripts/answers.js" type="module"></script>
 <script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
 

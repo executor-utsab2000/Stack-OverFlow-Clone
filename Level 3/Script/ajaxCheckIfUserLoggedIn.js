@@ -65,8 +65,8 @@ $(document).ready(function () {
           .firstElementChild.value;
       // console.log(questionId);
       sessionUserAuth(
-          `./Backend/Question/deleteQuestion.php?questionId=${questionId}`
-        );
+        `./Backend/Question/deleteQuestion.php?questionId=${questionId}`
+      );
     });
   });
 });
@@ -93,3 +93,29 @@ $(document).ready(function () {
     });
   });
 });
+
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+// if logged in show edit delete section  to user =>question page => answer page
+
+$(document).ready(function () {
+  const editDeleteBtn = document.querySelectorAll(".editDeleteBtn");
+  const backendUrl = "./Backend/sessionUserAuth.php";
+
+  $.get(backendUrl, function (data, status) {
+    const datas = JSON.parse(data);
+    // console.log(datas);
+
+    if (datas.ifActive) {
+      editDeleteBtn.forEach((elm) => elm.classList.remove("d-none"));
+    } else {
+      return;
+    }
+  });
+});
+
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------

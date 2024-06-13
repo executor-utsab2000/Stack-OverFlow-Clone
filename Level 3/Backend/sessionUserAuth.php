@@ -9,7 +9,7 @@
 // else {
 //     $ifUserLoggedIn = ["ifActive" => false];
 // }
-$ifUserLoggedIn = ["ifActive" => true];
+$ifUserLoggedIn = ["ifActive" => false];
 echo json_encode($ifUserLoggedIn);
 
 ?>
