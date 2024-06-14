@@ -111,11 +111,6 @@ $answerCount = mysqli_fetch_assoc(
 
 
 
-
-
-
-
-
                     <!-- answer repeatable part start-->
                     <?php
                     $answerQuery = "$answerQuery2 '$Question_Id' order by answer.`answer created at` desc";
@@ -180,7 +175,7 @@ $answerCount = mysqli_fetch_assoc(
                             $questionUserId = $answerData['user id'];
                             if ($questionUserId == 0) { //1 will be replaced by sessionUserId
                                 ?>
-                                <div class="editDeleteBtn d-none">  
+                                <div class="editDeleteBtn d-none">
                                     <div class="my-2">
                                         <form action="./Backend/Answer/.php" method="post">
                                             <input type="hidden" id="ansId" value="<?php echo $answerId ?>">
@@ -207,7 +202,6 @@ $answerCount = mysqli_fetch_assoc(
 
                     <?php } ?>
                     <!-- answer repeatable part end-->
-                    <!-- answer Content start -->
 
 
 

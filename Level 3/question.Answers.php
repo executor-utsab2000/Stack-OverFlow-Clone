@@ -95,6 +95,7 @@ if ($ansUserAvtar == '') {
                     <div class="questionContainer">
                         <input type="hidden" id="questionId" value="<?php echo $_GET['questionId'] ?>">
                         <input type="hidden" id="answerId" value="<?php echo $_GET['answerId'] ?>">
+                        <input type="hidden" id="currUrl">
                         <div class="questionTitle"><?php echo $questionTitle ?></div>
                         <div class="questionIssueDesc"><?php echo $questionDescription ?></div>
 

@@ -85,16 +85,33 @@ if (isset($_GET['questionId'])) {
             }
         }
     } else {
-        $deleteQuestion = mysqli_query($connection, "DELETE FROM question WHERE `question id` = '$questionId'");
-        if ($deleteQuestion) {
-            headerFunction(
-                '../../allQuestions.php',
-                [
-                    'message' => 'Question Deleted Successfully',
-                    'icon' => '<i class="fa-solid fa-check"></i>',
-                    'colorClass' => 'success'
-                ]
-            );
+
+        if ($questionImg != NULL) {
+            unlink("../../Images/Uploads/Question/$questionImg");
+            $deleteQuestion = mysqli_query($connection, "DELETE FROM question WHERE `question id` = '$questionId'");
+            if ($deleteQuestion) {
+                headerFunction(
+                    '../../allQuestions.php',
+                    [
+                        'message' => 'Question Deleted Successfully',
+                        'icon' => '<i class="fa-solid fa-check"></i>',
+                        'colorClass' => 'success'
+                    ]
+                );
+            }
+
+        } else {
+            $deleteQuestion = mysqli_query($connection, "DELETE FROM question WHERE `question id` = '$questionId'");
+            if ($deleteQuestion) {
+                headerFunction(
+                    '../../allQuestions.php',
+                    [
+                        'message' => 'Question Deleted Successfully',
+                        'icon' => '<i class="fa-solid fa-check"></i>',
+                        'colorClass' => 'success'
+                    ]
+                );
+            }
         }
     }
 

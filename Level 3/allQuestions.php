@@ -211,17 +211,23 @@ include './SQL/queries.php';
                                         $questionUserId = $allQuestion['userId'];
                                         if ($questionUserId == 0) { //1 will be replaced by sessionUserId
                                             ?>
-                                            <div class="editDeleteBtn d-none    ">
+                                            <div class="editDeleteBtn d-none">
                                                 <div class="my-2">
-                                                    <button class="btn buttonStyle editQuestion">
-                                                        <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Question
-                                                    </button>
+                                                    <a href="./Backend/Question/updateQuestion.php?questionId=<?php echo $questionId ?>"
+                                                        class="nav-link">
+                                                        <button class="btn buttonStyle editQuestion">
+                                                            <i class="fa-solid fa-pen-to-square me-2"></i></i>Edit Question
+                                                        </button>
+                                                    </a>
                                                 </div>
 
                                                 <div class="my-2">
-                                                    <button class="btn buttonStyle deleteQuestion">
-                                                        <i class="fa-solid fa-trash-can me-2"></i></i>Delete Question
-                                                    </button>
+                                                    <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questionId ?>"
+                                                        class="nav-link">
+                                                        <button class="btn buttonStyle deleteQuestion">
+                                                            <i class="fa-solid fa-trash-can me-2"></i></i>Delete Question
+                                                        </button>
+                                                    </a>
                                                 </div>
                                             </div>
                                         <?php } ?>

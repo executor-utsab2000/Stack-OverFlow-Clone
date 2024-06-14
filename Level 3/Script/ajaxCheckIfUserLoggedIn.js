@@ -53,48 +53,6 @@ $(document).ready(function () {
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 
-// delete question
-
-$(document).ready(function () {
-  const deleteQuestion = document.querySelectorAll(".deleteQuestion");
-  // console.log(deleteQuestion);
-
-  deleteQuestion.forEach((elm) => {
-    elm.addEventListener("click", () => {
-      const questionId =
-        elm.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
-          .firstElementChild.value;
-      // console.log(questionId);
-      sessionUserAuth(
-        `./Backend/Question/deleteQuestion.php?questionId=${questionId}`
-      );
-    });
-  });
-});
-
-// --------------------------------------------------------------------------
-// --------------------------------------------------------------------------
-// --------------------------------------------------------------------------
-
-// edit question
-
-$(document).ready(function () {
-  const editQuestion = document.querySelectorAll(".editQuestion");
-  // console.log(editQuestion);
-
-  editQuestion.forEach((elm) => {
-    elm.addEventListener("click", () => {
-      const questionId =
-        elm.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
-          .firstElementChild.value;
-      console.log(questionId);
-      // sessionUserAuth(
-      //     `./Backend/Question/updateQuestion.php?questionId=${questionId}`
-      //   );
-    });
-  });
-});
-
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 // --------------------------------------------------------------------------
