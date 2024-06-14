@@ -7,7 +7,7 @@ export function sessionUserAuth(targetLocation) {
     if (datas.ifActive) {
       location.href = targetLocation;
     } else {
-      location.href = "./index.php";
+      location.href = "./login_SignUp.php";
     }
   });
 }
