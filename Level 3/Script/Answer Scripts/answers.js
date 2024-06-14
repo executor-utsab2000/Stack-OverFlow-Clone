@@ -1,4 +1,5 @@
 import { sessionUserAuth } from "../Components/sessionUserAuth.js";
+import closeBtnBackend from "../Components/closeBackendMsg.js";
 
 document.getElementById("currUrl").value = encodeURIComponent(location.href);
 // console.log(encodeURIComponent( location.href));
@@ -23,3 +24,6 @@ $(document).ready(function () {
 });
 
 // replace the questions part by answer
+document.getElementById("closeBtn").addEventListener("click", () => {
+  closeBtnBackend("&message", 0);
+});
