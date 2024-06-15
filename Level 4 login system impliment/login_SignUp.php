@@ -11,6 +11,13 @@
 
 <body>
     <div class="container-fluid login_Signup">
+
+        <?php require_once './Frontend Components/backendMsg.php' ?>
+
+
+
+
+
         <div class="logoContainer">
             <img src="Images/UI/Logo.png" alt="" class="img-fluid">
         </div>
@@ -36,7 +43,9 @@
                         <?php require_once './SignUp_LoginForm/login.php' ?>
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
-                        tabindex="0">..ss.</div>
+                        tabindex="0">
+                        <?php require_once './SignUp_LoginForm/signUp.php' ?>
+                    </div>
                 </div>
             </div>
 

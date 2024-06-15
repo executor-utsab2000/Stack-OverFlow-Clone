@@ -1,15 +1,15 @@
 <?php
-
+session_start();
 // is session set or not 
-// $ifUserLoggedIn ;
-// if ((1+1)==2) {
-//     // session variable active check
-//     $ifUserLoggedIn = ["ifActive" => true];
-// } 
-// else {
-//     $ifUserLoggedIn = ["ifActive" => false];
-// }
-$ifUserLoggedIn = ["ifActive" => false];
+$ifUserLoggedIn;
+if (isset($_SESSION['userId'])) {
+    $ifUserLoggedIn = ["ifActive" => true];
+} else {
+    $ifUserLoggedIn = ["ifActive" => false];
+}
+
+
+// $ifUserLoggedIn = ["ifActive" => false];
 echo json_encode($ifUserLoggedIn);
 
 ?>
