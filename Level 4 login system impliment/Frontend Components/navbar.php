@@ -19,14 +19,14 @@
         font-size: 0.8rem;
     }
 
-    .navBar .userAvtar img {
+    .navBar .navUserAvtar img {
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     }
 
-    .navBar .userAvtar .dropdown-menu>li>a {
+    .navBar .navUserAvtar .dropdown-menu>li>a {
         font-weight: 700;
         font-size: 0.8rem;
     }
@@ -86,8 +86,8 @@
                     </ul>
 
                     <span class="navNotLoggedIn d-none">
-                        <button class="btn btn-outline-success btnS" type="click">Login</button>
-                        <button class="btn btn-outline-success btnS" type="click">Sign Up</button>
+                        <a href="login_SignUp.php"> <button class="btn btn-outline-success btnS" type="click">Login</button></a>
+                        <a href="login_SignUp.php"> <button class="btn btn-outline-success btnS" type="click">Sign Up</button></a>
                     </span>
 
                     <span class="nav-item dropdown d-none navUserAvtar">
