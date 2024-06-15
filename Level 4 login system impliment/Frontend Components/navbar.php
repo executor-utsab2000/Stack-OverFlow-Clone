@@ -85,12 +85,12 @@
 
                     </ul>
 
-                    <!-- if session active -->
-                    <!-- <button class="btn btn-outline-success btnS" type="click">Login</button>
-                    <button class="btn btn-outline-success btnS" type="click">Sign Up</button> -->
+                    <span class="navNotLoggedIn d-none">
+                        <button class="btn btn-outline-success btnS" type="click">Login</button>
+                        <button class="btn btn-outline-success btnS" type="click">Sign Up</button>
+                    </span>
 
-
-                    <span class="nav-item dropdown userAvtar">
+                    <span class="nav-item dropdown d-none navUserAvtar">
                         <a class="nav-link userAvtar" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <img src="https://i.pinimg.com/736x/09/24/a7/0924a7ef295741e916c8f42512bbe5bd.jpg" alt="">
@@ -98,7 +98,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./userProfile.php"><i class="fa-solid fa-user me-2"></i>
                                     Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i
+                            <li><a class="dropdown-item" href="Backend/logOut.php"><i
                                         class="fa-solid fa-arrow-right-from-bracket me-2"></i>Logout</a></li>
                         </ul>
                     </span>
@@ -111,3 +111,24 @@
         </nav>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function () {
+
+        const backendUrl = "./Backend/sessionUserAuth.php";
+
+        $.get(backendUrl, function (data, status) {
+            const datas = JSON.parse(data);
+            console.log(datas);
+
+            if (!datas.ifActive) {
+                document.querySelector('.navNotLoggedIn').classList.remove('d-none')
+            }
+            else {
+                document.querySelector('.navUserAvtar').classList.remove('d-none')
+            }
+
+        });
+    });
+</script>

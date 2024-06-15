@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (
     !isset($_GET['questionId']) &&
     !isset($_SESSION['userId'])

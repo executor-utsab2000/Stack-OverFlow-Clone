@@ -14,7 +14,7 @@ if (!isset($_GET['questionId'])) {
 
 include './SQL/queries.php';
 $Question_Id = $_GET['questionId'];
-$anspageQuestionQuery = "$answerQuery1 '$Question_Id' ";
+$anspageQuestionQuery = "$answerQuery1 '$Question_Id' ORDER BY RAND() ";
 $QueryExec6 = mysqli_query($connection, $anspageQuestionQuery);
 $questionData = mysqli_fetch_assoc($QueryExec6);
 
