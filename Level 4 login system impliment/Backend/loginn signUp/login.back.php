@@ -5,7 +5,7 @@ require '../Components/headerFunction.php';
 
 
 
-var_dump($_POST);
+// var_dump($_POST);
 
 
 $email = $_POST['email'];
