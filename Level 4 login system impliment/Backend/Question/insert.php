@@ -1,5 +1,11 @@
 <?php
 // session if active
+session_start();
+if (!isset($_SESSION['userId'])) {
+    header("location: ../../index.php");
+}
+
+$sessionUser = $_SESSION['userId'];
 
 require '../Components/headerFunction.php';
 require '../Components/connection.php';
@@ -42,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($fileSize == 0) {
         $insertQuestionSqlNoImg = "INSERT INTO `question` (`question id`, `userId`, `topic id`, `question title`, `question description`    ) 
                                 VALUES 
-                                ('$questionId ', '0', '$questionCategory', '$questionTitle', '$questionDescription')";
+                                ('$questionId ', '$sessionUser', '$questionCategory', '$questionTitle', '$questionDescription')";
         $queryNoImgExec = mysqli_query($connection, $insertQuestionSqlNoImg);
         if ($queryNoImgExec) {
             headerFunction(
@@ -68,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $insertQuestionSql = "INSERT INTO `question` 
                         (`question id`, `userId`, `topic id`, `question title`, `question description`, `screenShot`) 
                         VALUES 
-                        ('$questionId', '0', '$questionCategory', '$questionTitle', '$questionDescription', '$fullNewName')";
+                        ('$questionId', '$sessionUser', '$questionCategory', '$questionTitle', '$questionDescription', '$fullNewName')";
 
                         $queryExec = mysqli_query($connection, $insertQuestionSql);
 

@@ -1,5 +1,5 @@
 <div class="loginContainer">
-    <form action="./Backend/loginn signUp/login.back.php" method="post">
+    <form action="./Backend/Login Signup/login.back.php" method="post">
         <div class="inputContainer mb-4">
             <label for="email">Enter Your Email : </label>
             <input type="text" name="email" placeholder="Enter Your Email">

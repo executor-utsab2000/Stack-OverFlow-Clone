@@ -1,3 +1,11 @@
+<?php
+
+if (!isset($_SESSION['userId'])) {
+  header("./allQuestions.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

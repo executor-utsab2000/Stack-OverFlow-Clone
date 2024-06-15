@@ -1,8 +1,11 @@
 <?php
 
 // if session active and question id is send by get req
-
-if (isset($_GET['questionId'])) {
+session_start();
+if (
+    isset($_GET['questionId']) &&
+    isset($_SESSION['userId'])
+) {
 
     require '../Components/headerFunction.php';
     require '../Components/connection.php';

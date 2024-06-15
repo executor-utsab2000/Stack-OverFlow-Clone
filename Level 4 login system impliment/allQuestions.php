@@ -1,4 +1,9 @@
 <?php
+$sessionUser = NULL;
+session_start();
+if (isset($_SESSION['userId'])) {
+    $sessionUser = $_SESSION['userId'];
+}
 include './SQL/queries.php';
 ?>
 
@@ -208,8 +213,9 @@ include './SQL/queries.php';
                                         <!--if session is active and  if session user == user of question -->
                                         <!-- links will contain backend Deletepage with question id as get request  -->
                                         <?php
+
                                         $questionUserId = $allQuestion['userId'];
-                                        if ($questionUserId == 0) { //1 will be replaced by sessionUserId
+                                        if ($questionUserId == $sessionUser) { //1 will be replaced by sessionUserId
                                             ?>
                                             <div class="editDeleteBtn d-none">
                                                 <div class="my-2">

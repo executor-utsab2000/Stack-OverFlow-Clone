@@ -1,6 +1,9 @@
 <?php
 
-if (!isset($_GET['questionId'])) {
+if (
+    !isset($_GET['questionId']) &&
+    !isset($_SESSION['userId'])
+) {
     header("location:./allQuestions.php");
 }
 
@@ -85,4 +88,5 @@ $questionId = $_GET['questionId'];
 </body>
 <script src="Script/Answer Scripts/provideAnswer.js"></script>
 <script src="Script/Url Change BackendMsg/parameterGetMsg.changeUrl .js" type="module"></script>
+
 </html>

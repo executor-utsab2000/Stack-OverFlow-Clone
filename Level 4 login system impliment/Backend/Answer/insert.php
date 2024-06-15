@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['userId'])) {
+    header("location: ../../index.php");
+}
+
+$sessionUser = $_SESSION['userId'];
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     require '../Components/connection.php';
@@ -40,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($fileIfPresent == 0) {
         $insertAnswerSqlNoImg = "INSERT INTO `answer` (`answer id`, `question id`, `user id`, `answer`)
                         VALUES 
-                        ('$ansId', '$questionId', '0', '$answer')";
+                        ('$ansId', '$questionId', '$sessionUser', '$answer')";
         $queryNoImgExec = mysqli_query($connection, $insertAnswerSqlNoImg);
         if ($queryNoImgExec) {
             headerFunction(
@@ -146,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $insertSQl = "INSERT INTO `answer` 
                         (`answer id`, `question id`, `user id`, `answer`, `answerImage`) 
                         VALUES 
-                        ('$ansId', '$questionId', '0', '$answer', '$imgArrayJson')";
+                        ('$ansId', '$questionId', '$sessionUser', '$answer', '$imgArrayJson')";
         $response = mysqli_query($connection, $insertSQl);
         if ($response) {
             headerFunction(

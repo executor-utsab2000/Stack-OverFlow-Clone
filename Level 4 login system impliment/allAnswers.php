@@ -1,4 +1,12 @@
 <?php
+$sessionUser = NULL;
+session_start();
+if (isset($_SESSION['userId'])) {
+    $sessionUser = $_SESSION['userId'];
+}
+
+
+
 
 if (!isset($_GET['questionId'])) {
     header("location:./allQuestions.php");
@@ -173,7 +181,7 @@ $answerCount = mysqli_fetch_assoc(
                             <?php
                             // if user logged in has posted the answer 
                             $questionUserId = $answerData['user id'];
-                            if ($questionUserId == 0) { //1 will be replaced by sessionUserId
+                            if ($questionUserId == $sessionUser) { //1 will be replaced by sessionUserId
                                 ?>
                                 <div class="editDeleteBtn d-none">
                                     <div class="my-2">

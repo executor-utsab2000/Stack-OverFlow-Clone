@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['userId'])) {
+    header("location: ../../index.php");
+}
+
+$sessionUser = $_SESSION['userId'];
 
 // var_dump($_GET);
 
@@ -18,13 +24,13 @@ $answerParam = explode('&', $param)[1];
 
 $bookMarkId = uniqid('Answer-Bookmark-');
 
-$ifAnswerPresent = "SELECT * FROM `answer bookmarked` WHERE `question id` ='$questionId' AND `answer id`= '$answerId' AND `user id` = 0 ";
+$ifAnswerPresent = "SELECT * FROM `answer bookmarked` WHERE `question id` ='$questionId' AND `answer id`= '$answerId' AND `user id` = '$sessionUser' ";
 $queryExec = mysqli_query($connection, $ifAnswerPresent);
 // var_dump($queryExec);
 
 if (mysqli_num_rows($queryExec) === 0) {
 
-    $sql = "INSERT INTO `answer bookmarked`(`bookMark id`, `question id`, `answer id`, `user id`) VALUES ('$bookMarkId','$questionId','$answerId','0')";
+    $sql = "INSERT INTO `answer bookmarked`(`bookMark id`, `question id`, `answer id`, `user id`) VALUES ('$bookMarkId','$questionId','$answerId','$sessionUser')";
     $res = mysqli_query($connection, $sql);
     if ($res) {
         headerFunction(

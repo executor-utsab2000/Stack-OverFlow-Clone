@@ -1,5 +1,14 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['userId'])) {
+    header("location: ../../index.php");
+}
+
+$sessionUser = $_SESSION['userId'];
+
+
+
 require '../Components/connection.php';
 require '../Components/headerFunction.php';
 require '../Components/urlSplit.php';
