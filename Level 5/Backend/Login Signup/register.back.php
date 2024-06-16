@@ -42,10 +42,6 @@ if ($ifUserPresent == 0) {
 
 
 
-
-
-
-
 } else {
     headerFunction(
         '../../login_SignUp.php',
