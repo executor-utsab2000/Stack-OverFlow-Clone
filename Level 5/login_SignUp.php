@@ -52,5 +52,6 @@
         </div>
     </div>
 </body>
+<script type="module" src="Script/Url Change BackendMsg/noParameterGetMsg.changeUrl.js"></script>
 
 </html>
