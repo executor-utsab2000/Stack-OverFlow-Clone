@@ -45,8 +45,67 @@
         </div>
       </div>
     </div>
+
+    <!-- --------------------------------------------------------------------------- -->
+
+    <!-- login modal popup -->
+    <div class="loginModalPopup animate__animated animate__bounceInUp animate__slower">
+      <button id="closeModalPopup" class="btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="buttonContainer">
+        <span>
+          <a href="./login_SignUp.php"> <button class="btn me-1">Login</button></a>
+          <a href="./login_SignUp.php"> <button class="btn ms-1">Sign Up</button></a>
+        </span>
+      </div>
+      <div class="txt text-center">
+        Login or Sign Up to get a better experience of our application
+      </div>
+    </div>
+
+
+
   </div>
 </body>
 <script type="module" src="Script/Url Change BackendMsg/noParameterGetMsg.changeUrl.js"></script>
+<script>
+
+  $(document).ready(function () {
+    const element = document.querySelector('.loginModalPopup')
+
+
+    const backendUrl = "./Backend/sessionUserAuth.php";
+
+    $.get(backendUrl, function (data, status) {
+      const datas = JSON.parse(data);
+      console.log(datas);
+
+      if (datas.ifActive) {
+        document.querySelector('#closeModalPopup').parentNode.classList.add('d-none')
+      }
+      else {
+        return
+      }
+
+    });
+
+    document.querySelector('#closeModalPopup').addEventListener('click', () => {
+      element.classList.remove(
+        // 'animate__animated',
+        'animate__bounceInUp',
+        'animate__slower'
+      )
+
+      element.classList.add(
+        'animate__bounceOutDown',
+        'animate__slow'
+      );
+    })
+
+  })
+
+</script>
 
 </html>

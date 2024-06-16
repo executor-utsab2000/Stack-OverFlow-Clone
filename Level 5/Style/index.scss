@@ -70,3 +70,58 @@
 
 
 }
+
+
+.loginModalPopup {
+    z-index: 20;
+    background-color: #ced4da;
+    background-image: url('../Images/UI/modalBg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-weight: 700;
+
+
+    #closeModalPopup {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0.5rem;
+
+        i {
+            font-size: 1.3rem;
+            color: red;
+        }
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+
+        button {
+            width: 9rem;
+            background-color: #a7c957;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+    }
+
+    .txt {
+        margin-top: 1rem;
+        font-weight: 700;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:1300px) {
+    .landingContainer{
+        margin-bottom: 10rem;
+    }
+}

@@ -22,7 +22,10 @@ $userId = $userData['userID'];
 
 
 if ($noOfRows == 1) {
-    if ($password == $dbPassword) {
+
+    $ifPassVerify = password_verify($password, $dbPassword);
+
+    if ($ifPassVerify) {
 
         session_start();
         $_SESSION['userId'] = $userId;
