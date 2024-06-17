@@ -5,18 +5,18 @@ require './Backend/Components/connection.php';
 
 // questions.php
 
-if (isset($_GET['topic_Id'])) {
+// if (isset($_GET['topic_Id'])) {
+//     $questionSQL = "SELECT 
+//                     question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
+//                     users.username , users.userAvtar 
+//                     FROM question LEFT JOIN users ON question.userId = users.userID ;
+//                     where question.`topic id` = ;";
+// } else {
     $questionSQL = "SELECT 
-                    question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
-                    users.username , users.userAvtar 
-                    FROM question LEFT JOIN users ON question.userId = users.userID ;
-                    where question.`topic id` = ;";
-} else {
-    $questionSQL = "SELECT 
-                    question.`question id` , question.userId , question.userId , question.`question title` , question.`question description`,question.`question created at`,
+                    question.`question id` , question.userId , question.`topic id` , question.`question title` , question.`question description`,question.`question created at` ,
                     users.username , users.userAvtar 
                     FROM question LEFT JOIN users ON question.userId = users.userID ORDER BY RAND();";
-}
+// }
 
 $QueryExec5 = mysqli_query($connection, $questionSQL);
 
