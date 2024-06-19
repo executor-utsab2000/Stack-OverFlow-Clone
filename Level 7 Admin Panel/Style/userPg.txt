@@ -1,0 +1,28 @@
+home => 
+    question posted
+    answers posted  
+    question saved
+    answer saved
+
+
+
+
+profile=>
+    profile details 
+    edit Details => editPage
+ 
+    
+
+question saved =>
+    questions saved
+    
+
+
+answer saved =>
+    answers saved
+
+
+
+settings=>
+    theme => dark / light
+    delete profile

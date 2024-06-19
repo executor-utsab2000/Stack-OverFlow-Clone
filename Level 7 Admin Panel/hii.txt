@@ -1,0 +1,50 @@
+home
+about
+questions
+answers
+ask questions
+give answers
+
+
+index.php
+about.php
+questions.php
+questions.php?questionId=123
+questions.php?topicId=22
+answers.php?questionId=123
+answers.php?answerId=303        =>edit answer
+
+
+AJAX
+ask a quesion
+provide a answer
+bookmark question
+bookmark answer 
+insert Answer btn
+ask question  btn
+
+
+
+FORM
+question insert
+question update
+answer insert
+answer update
+
+question insert 
+question delete
+
+answer insert 
+answer delete
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Done =>
+
+question insert 
+question delete
+question bookmarked
+
+answer insert 
+answer delete
+

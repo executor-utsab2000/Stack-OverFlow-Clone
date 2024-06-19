@@ -1,0 +1,189 @@
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+.allAnswers {
+    margin-top: 8rem;
+
+
+    .rightPanelAnswers {
+        .insertDiv {
+            position: fixed;
+            bottom: 2rem;
+            right: 2.5rem;
+
+            i {
+                padding: 0.8rem;
+                background-color: #c1121f;
+                color: yellow;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+                font-size: 1.2rem;
+                border-radius: 50%;
+            }
+        }
+
+        .question {
+            border-radius: 10px;
+            border-bottom: #212121 2px solid;
+            padding-bottom: 1.5rem;
+            letter-spacing: 1px;
+
+
+            .questionTitle {
+                font-weight: 800;
+                font-size: 1.1rem;
+                color: #1b263b;
+            }
+
+            .questionIssueDesc {
+                margin-top: 2rem;
+                font-weight: 700;
+                font-size: 0.8rem;
+                color: #778da9;
+            }
+
+            .questionImgContainer {
+                width: 100%;
+                margin: 1rem 0;
+
+                img {
+                    aspect-ratio: 3/2;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+
+            .userDetails {
+                margin-top: 1rem;
+                font-weight: 700;
+                font-size: 0.8rem;
+
+                .userDp {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    margin-right: 0.3rem;
+                }
+
+                .line {
+                    width: 50px;
+                    height: 20px;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            .questionDetails {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .questionDetailsSub {
+                    text-align: center;
+                    margin-top: 2.5rem;
+                    font-weight: 700;
+                    font-size: 0.7rem;
+                }
+            }
+
+        }
+
+        .answerContainer {
+            border-bottom: #b6babf 2px solid;
+            margin-top: 2rem;
+            padding: 1rem 0;
+
+            .answerContent {
+                display: flex;
+                justify-content: space-between;
+
+                .leftPanel {
+                    .userDp>img {
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    }
+                }
+
+                .rightPanel {
+                    margin-left: 2rem;
+
+                    .answerDesc {
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                        text-align: justify;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        /* Limit to 2 lines */
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-height: 4rem;
+                        /* Adjust based on line-height */
+                        margin-top: 1rem;
+                        color: #4e5154;
+                    }
+
+                    .images {
+                        margin-top: 1rem;
+                        color: #4e5154;
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                    }
+
+                    .ansTime {
+                        font-weight: 700;
+                        color: #778da9;
+                        font-weight: 700;
+                        font-size: 0.7rem;
+                    }
+
+                    .readMore {
+                        a {
+                            button {
+                                width: 8rem;
+                                font-weight: 750;
+                                font-size: 0.6rem;
+                                padding: 0.5rem;
+                                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                                background-color: #ffb703;
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .editDeleteBtn {
+                margin-top: 0.5rem;
+                display: flex;
+                justify-content: space-around;
+
+                button {
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    color: #778da9;
+                }
+            }
+        }
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width:991.5px) {
+    .rightPanelAnswers {
+        padding: 0.5rem 4rem;
+    }
+}
