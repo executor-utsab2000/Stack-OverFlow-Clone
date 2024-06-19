@@ -61,7 +61,7 @@ include './SQL/queries.php';
                         <!-- -------------------------------------------------------- -->
                         <div class="accordion" id="filterAccordian">
                             <div class="accordion-item">
-                                <div id="filter" class="accordion-collapse collapse show"
+                                <div id="filter" class="accordion-collapse collapse"
                                     data-bs-parent="#filterAccordian">
                                     <div class="accordion-body">
                                         <div class="row">

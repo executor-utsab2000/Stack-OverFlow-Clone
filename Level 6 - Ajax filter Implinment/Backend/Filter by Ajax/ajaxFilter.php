@@ -13,25 +13,26 @@ $queryQuestionBasic = " SELECT
                     question.`question id` , question.userId , question.`topic id` , question.`question title` , question.`question description`,question.`question created at` ,
                     users.username , users.userAvtar 
                     FROM question LEFT JOIN users ON question.userId = users.userID left join `answer` 
-                    on question.`question id` =  answer.`question id` 
-                 	";
+                    on question.`question id` =  answer.`question id`  ";
 
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 if (count($_POST) == 1) {
     if (isset($_POST['topic'])) {
         $topicId = $_POST['topic'];
         $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` = '$topicId' group by question.`question id`";
 
-    } 
-    elseif (isset($_POST['timePosted'])) {
-        
+    } elseif (isset($_POST['timePosted'])) {
+
         if ($_POST['timePosted'] == 'recentPost') {
             $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by question.`question created at` desc";
         } else {
             $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by question.`question created at`";
         }
-        
-        
+
+
     } elseif (isset($_POST['answerNumber'])) {
         if ($_POST['answerNumber'] == 'mostAnswer') {
             $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by(count(answer.`question id`)) desc ";
@@ -41,34 +42,83 @@ if (count($_POST) == 1) {
     }
 }
 
-// -------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if (count($_POST) == 2) {
     if (
         isset($_POST['topic']) &&
         isset($_POST['answerNumber'])
     ) {
-        echo 'answerNumber topic';
-    } elseif (
+        $topicId = $_POST['topic'];
+
+        if ($_POST['answerNumber'] == 'mostAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` = '$topicId' group by question.`question id` order by (count(answer.`question id`)) desc ";
+        } else {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` = '$topicId' group by question.`question id` order by (count(answer.`question id`))";
+        }
+
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    elseif (
         isset($_POST['topic']) &&
         isset($_POST['timePosted'])
     ) {
-        echo 'timePosted topic';
-    } elseif (
+        $topicId = $_POST['topic'];
+
+        if ($_POST['timePosted'] == 'recentPost') {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` = '$topicId' group by question.`question id` order by question.`question created at` desc";
+        } else {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` = '$topicId' group by question.`question id` order by question.`question created at`";
+        }
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    elseif (
         isset($_POST['timePosted']) &&
         isset($_POST['answerNumber'])
     ) {
-        echo 'answerNumber timePosted';
+
+        if ($_POST['timePosted'] == 'recentPost' && $_POST['answerNumber'] == 'noAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by (count(answer.`question id`))  , question.`question created at` desc";
+        } 
+        elseif ($_POST['timePosted'] == 'recentPost' && $_POST['answerNumber'] == 'mostAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by (count(answer.`question id`)) desc , question.`question created at` desc";
+        } 
+        elseif ($_POST['timePosted'] == 'oldPost' && $_POST['answerNumber'] == 'noAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by (count(answer.`question id`)) , question.`question created at`";
+        } 
+        elseif ($_POST['timePosted'] == 'oldPost' && $_POST['answerNumber'] == 'mostAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic group by question.`question id` order by (count(answer.`question id`)) desc , question.`question created at` ";
+        }
+
     }
 
 }
-// -----------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 if (count($_POST) == 3) {
     if (
         isset($_POST['topic']) &&
         isset($_POST['timePosted']) &&
         isset($_POST['answerNumber'])
     ) {
-        echo 'answerNumber timePosted topic';
+        $topicId = $_POST['topic'];
+
+        if ($_POST['timePosted'] == 'recentPost' && $_POST['answerNumber'] == 'noAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` =  '$topicId' group by question.`question id` order by (count(answer.`question id`))  , question.`question created at` desc";
+        } 
+        elseif ($_POST['timePosted'] == 'recentPost' && $_POST['answerNumber'] == 'mostAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` =  '$topicId' group by question.`question id` order by (count(answer.`question id`)) desc , question.`question created at` desc";
+        } 
+        elseif ($_POST['timePosted'] == 'oldPost' && $_POST['answerNumber'] == 'noAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` =  '$topicId' group by question.`question id` order by (count(answer.`question id`)) , question.`question created at`";
+        } 
+        elseif ($_POST['timePosted'] == 'oldPost' && $_POST['answerNumber'] == 'mostAnswer') {
+            $queryQuestionUpd = "$queryQuestionBasic where question.`topic id` =  '$topicId' group by question.`question id` order by (count(answer.`question id`)) desc , question.`question created at` ";
+        }
     }
 
 }
