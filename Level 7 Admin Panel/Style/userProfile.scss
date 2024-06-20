@@ -50,7 +50,7 @@
 
 
         .leftMenu {
-            max-width: 15rem;
+            max-width: 14rem;
             padding: 0.5rem 1rem;
 
             button {
@@ -70,6 +70,49 @@
         .rightPanel {
             padding: 0.5rem 1rem;
             width: 80%;
+
+            .headerPanel {
+                font-weight: 800;
+                letter-spacing: 1px;
+                font-size: 1.1rem;
+                text-transform: capitalize;
+                margin-bottom: 1rem;
+            }
+
+            .contentContainerBox {
+                padding: 1rem;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                border-radius: 10px;
+                margin-bottom: 1rem;
+            }
+
+
+            .questionSaved {
+                .questionTitle {
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
+
+                .questionDesc {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-top: 1rem;
+                    color: #4e5154;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                }
+
+            }
+
+
+
+
+
+
+
         }
     }
 
