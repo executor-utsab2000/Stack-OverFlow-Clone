@@ -84,16 +84,20 @@
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
                 border-radius: 10px;
                 margin-bottom: 1rem;
+                background-color: #dee2e6;
+                position: relative;
             }
 
 
-            .questionSaved {
+            .questionSaved,
+            .answerSaved {
                 .questionTitle {
                     font-weight: 700;
                     font-size: 1rem;
                 }
 
-                .questionDesc {
+                .questionDesc,
+                .answerDesc {
                     display: -webkit-box;
                     -webkit-line-clamp: 1;
                     -webkit-box-orient: vertical;
@@ -102,7 +106,19 @@
                     margin-top: 1rem;
                     color: #4e5154;
                     font-size: 0.8rem;
-                    font-weight: 600;
+                    font-weight: 650;
+                }
+
+                .answerDesc {
+                    color: #495057;
+                }
+
+                .deleteAnsBookMarked , .deleteQuestBookMarked {
+                    min-width: 4rem;
+                    position: absolute;
+                    right: 10px;
+                    top: 40%;
+                    color: red;
                 }
 
             }

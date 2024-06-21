@@ -57,11 +57,11 @@ require_once './Backend/Components/connection.php';
               <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
                 type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
 
-              <button class="nav-link active" id="v-pills-question-tab" data-bs-toggle="pill"
+              <button class="nav-link " id="v-pills-question-tab" data-bs-toggle="pill"
                 data-bs-target="#v-pills-question" type="button" role="tab" aria-controls="v-pills-question"
                 aria-selected="false">Question Saved</button>
 
-              <button class="nav-link" id="v-pills-answer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-answer"
+              <button class="nav-link active" id="v-pills-answer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-answer"
                 type="button" role="tab" aria-controls="v-pills-answer" aria-selected="false">Answer Saved</button>
 
               <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
@@ -115,11 +115,11 @@ require_once './Backend/Components/connection.php';
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
               tabindex="0"><?php require './User Profile/profile.php' ?></div>
 
-            <div class="tab-pane fade show active" id="v-pills-question" role="tabpanel"
+            <div class="tab-pane fade " id="v-pills-question" role="tabpanel"
               aria-labelledby="v-pills-question-tab" tabindex="0"><?php require './User Profile/questionSaved.php' ?>
             </div>
 
-            <div class="tab-pane fade" id="v-pills-answer" role="tabpanel" aria-labelledby="v-pills-answer-tab"
+            <div class="tab-pane fade show active" id="v-pills-answer" role="tabpanel" aria-labelledby="v-pills-answer-tab"
               tabindex="0"><?php require './User Profile/answerSaved.php' ?></div>
 
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"

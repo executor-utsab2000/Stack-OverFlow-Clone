@@ -5,9 +5,6 @@ $profileQueryQuestion = "select `question bookmarked`.`question id` , question.`
 $profileQueryExec2 = mysqli_query($connection, $profileQueryQuestion);
 // var_dump($profileQueryExec2);
 
-// $questionId = $profileQueryExec2['question id'];
-// $questionTitle = $profileQueryExec2['question title'];
-// $questionDescription = $profileQueryExec2['question description'];
 ?>
 
 <div class="questionSaved">
@@ -24,8 +21,17 @@ $profileQueryExec2 = mysqli_query($connection, $profileQueryQuestion);
 
         <a href="allAnswers.php?questionId=<?php echo $questionId ?>" class="nav-link">
             <div class="contentContainerBox">
-                <div class="questionTitle"><?php echo $questionTitle ?></div>
-                <div class="questionDesc"><?php echo $questionDescription ?></div>
+                <div>
+                    <div class="questionTitle"><?php echo $questionTitle ?></div>
+                    <div class="questionDesc"><?php echo $questionDescription ?></div>
+                </div>
+
+
+                <a href="#">
+                    <button class="btn deleteQuestBookMarked">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </a>
             </div>
         </a>
 
