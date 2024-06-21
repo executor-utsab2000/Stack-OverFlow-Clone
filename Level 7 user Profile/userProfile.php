@@ -51,7 +51,7 @@ require_once './Backend/Components/connection.php';
           <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-              <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
                 type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
 
               <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
@@ -61,7 +61,7 @@ require_once './Backend/Components/connection.php';
                 data-bs-target="#v-pills-question" type="button" role="tab" aria-controls="v-pills-question"
                 aria-selected="false">Question Saved</button>
 
-              <button class="nav-link active" id="v-pills-answer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-answer"
+              <button class="nav-link " id="v-pills-answer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-answer"
                 type="button" role="tab" aria-controls="v-pills-answer" aria-selected="false">Answer Saved</button>
 
               <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
@@ -76,7 +76,7 @@ require_once './Backend/Components/connection.php';
           <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-              <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+              <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
                 type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i
                   class="fa-solid fa-house-user"></i>
               </button>
@@ -86,7 +86,7 @@ require_once './Backend/Components/connection.php';
                 <i class="fa-solid fa-user"></i>
               </button>
 
-              <button class="nav-link active" id="v-pills-question-tab" data-bs-toggle="pill"
+              <button class="nav-link " id="v-pills-question-tab" data-bs-toggle="pill"
                 data-bs-target="#v-pills-question" type="button" role="tab" aria-controls="v-pills-question"
                 aria-selected="false">
                 <i class="fa-solid fa-circle-question"></i>
@@ -109,7 +109,7 @@ require_once './Backend/Components/connection.php';
         <!-- right panel -->
         <div class="rightPanel ">
           <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
               tabindex="0"><?php require './User Profile/homeSummary.php' ?></div>
 
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
@@ -119,7 +119,7 @@ require_once './Backend/Components/connection.php';
               aria-labelledby="v-pills-question-tab" tabindex="0"><?php require './User Profile/questionSaved.php' ?>
             </div>
 
-            <div class="tab-pane fade show active" id="v-pills-answer" role="tabpanel" aria-labelledby="v-pills-answer-tab"
+            <div class="tab-pane fade " id="v-pills-answer" role="tabpanel" aria-labelledby="v-pills-answer-tab"
               tabindex="0"><?php require './User Profile/answerSaved.php' ?></div>
 
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"

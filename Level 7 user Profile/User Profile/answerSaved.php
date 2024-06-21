@@ -1,5 +1,5 @@
 <?php
-$profileQuery3 = "SELECT question.`question id` , question.`question title` , question.`question description` ,answer.`answer` , `answer bookmarked`.`answer id`  
+$profileQuery3 = "SELECT question.`question id` , question.`question title` , question.`question description` ,answer.`answer` , `answer bookmarked`.`answer id`  , `answer bookmarked`.`bookMark id`  
 from `answer bookmarked` left join answer on `answer bookmarked`.`answer id` = answer.`answer id` 
 left join question on `answer bookmarked`.`question id` = question.`question id` 
 where `answer bookmarked`.`user id` = '$sessionUser' ; ";
@@ -18,6 +18,7 @@ $profileQueryExec3 = mysqli_query($connection, $profileQuery3);
 
     <?php
     while ($ansData = mysqli_fetch_assoc($profileQueryExec3)) {
+        $bookMarkId = $ansData['bookMark id'];
         $questionId = $ansData['question id'];
         $answerId = $ansData['answer id'];
         $questionTitle = $ansData['question title'];
@@ -37,7 +38,7 @@ $profileQueryExec3 = mysqli_query($connection, $profileQuery3);
                     <div class="answerDesc mt-3"><?php echo $answer ?></div>
                 </div>
 
-                <a href="#">
+                <a href="Backend/Answer/deleteBookmarkedAnswer.php?bookmarkId=<?php echo $bookMarkId ?>">
                     <button class="btn deleteAnsBookMarked">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>

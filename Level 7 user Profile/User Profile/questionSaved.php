@@ -1,5 +1,5 @@
 <?php
-$profileQueryQuestion = "select `question bookmarked`.`question id` , question.`question title` , question.`question description` 
+$profileQueryQuestion = "select `question bookmarked`.`bookMark id` , `question bookmarked`.`question id` , question.`question title` , question.`question description` 
                         from `question bookmarked` left join question using(`question id`)
                         where `question bookmarked`.`user id` = '$sessionUser'";
 $profileQueryExec2 = mysqli_query($connection, $profileQueryQuestion);
@@ -12,6 +12,7 @@ $profileQueryExec2 = mysqli_query($connection, $profileQueryQuestion);
 
     <?php
     while ($questData = mysqli_fetch_assoc($profileQueryExec2)) {
+        $bookMarkId = $questData['bookMark id'];
         $questionId = $questData['question id'];
         $questionTitle = $questData['question title'];
         $questionDescription = $questData['question description'];
@@ -27,7 +28,7 @@ $profileQueryExec2 = mysqli_query($connection, $profileQueryQuestion);
                 </div>
 
 
-                <a href="#">
+                <a href="./Backend/Question/deleteBookmarkedQuestion.php?bookMarkId=<?php echo $bookMarkId ?>">
                     <button class="btn deleteQuestBookMarked">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
