@@ -67,7 +67,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Topics
@@ -81,7 +81,7 @@
                                 <li><a class="dropdown-item" href="#"><i class="fa-brands fa-node me-2"></i>Node Js</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
                     </ul>
 

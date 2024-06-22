@@ -6,8 +6,8 @@ if (!isset($_SESSION['userId'])) {
 }
 
 $sessionUser = $_SESSION['userId'];
-require_once './Backend/Components/connection.php';
-
+require './Backend/Components/connection.php';
+require './Frontend Components/backendMsg.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,8 +115,8 @@ require_once './Backend/Components/connection.php';
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
               tabindex="0"><?php require './User Profile/profile.php' ?></div>
 
-            <div class="tab-pane fade " id="v-pills-question" role="tabpanel"
-              aria-labelledby="v-pills-question-tab" tabindex="0"><?php require './User Profile/questionSaved.php' ?>
+            <div class="tab-pane fade " id="v-pills-question" role="tabpanel" aria-labelledby="v-pills-question-tab"
+              tabindex="0"><?php require './User Profile/questionSaved.php' ?>
             </div>
 
             <div class="tab-pane fade " id="v-pills-answer" role="tabpanel" aria-labelledby="v-pills-answer-tab"
@@ -133,33 +133,9 @@ require_once './Backend/Components/connection.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </div>
 </body>
+<script type="module" src="Script/Url Change BackendMsg/noParameterGetMsg.changeUrl.js"></script>
 
 </html>
