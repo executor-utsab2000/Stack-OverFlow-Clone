@@ -4,12 +4,7 @@ from `answer bookmarked` left join answer on `answer bookmarked`.`answer id` = a
 left join question on `answer bookmarked`.`question id` = question.`question id` 
 where `answer bookmarked`.`user id` = '$sessionUser' ; ";
 $profileQueryExec3 = mysqli_query($connection, $profileQuery3);
-// var_dump($profileQueryExec3);
-// $questionId = $profileQueryExec3['question id'];
-// $answerId = $profileQueryExec3['answer id'];
-// $questionTitle = $profileQueryExec3['question title'];
-// $questionDesc = $profileQueryExec3['question description'];
-// $answer = $profileQueryExec3['answer'];
+
 
 ?>
 
