@@ -36,7 +36,7 @@ $profileQueryExec2by2 = mysqli_query($connection, $profileQueryQuestionSub);
 
             <?php
             while ($questData = mysqli_fetch_assoc($profileQueryExec2by2)) {
-                $questId = $questData['question id'];
+                $questionId = $questData['question id'];
                 $questionTitle = $questData['question title'];
                 $questionDescription = $questData['question description'];
 
@@ -45,8 +45,8 @@ $profileQueryExec2by2 = mysqli_query($connection, $profileQueryQuestionSub);
 
 
 
-                <div class="contentContainerBox">
-                    <input type="hidden" value="<?php echo $questId ?>">
+                <div class="contentContainerBox questionSave">
+                    <input type="hidden" value="<?php echo $questionId ?>">
                     <div class="row">
                         <div class="col-md-11">
                             <div class="itemTitle"><?php echo $questionTitle ?></div>
@@ -54,12 +54,12 @@ $profileQueryExec2by2 = mysqli_query($connection, $profileQueryQuestionSub);
                         </div>
 
                         <div class="col-md-1 btnBooMarkActionContainer my-md-auto my-3">
-                            <!-- <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questId ?>" > -->
+                            <!-- <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questionId ?>" > -->
                             <button class="btn btnBooMarkAction">
                                 <i class="fa-solid fa-pen text-warning"></i>
                             </button>
                             <!-- </a> -->
-                            <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questId ?>">
+                            <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questionId ?>">
                                 <button class="btn btnBooMarkAction">
                                     <i class="fa-solid fa-trash-can text-danger"></i>
                                 </button>
@@ -95,7 +95,7 @@ $profileQueryExec2by2 = mysqli_query($connection, $profileQueryQuestionSub);
                 ?>
 
 
-                <div class="contentContainerBox">
+                <div class="contentContainerBox questionSave">
                     <input type="hidden" value="<?php echo $questionId ?>">
                     <div class="row">
                         <div class="col-md-11">
@@ -104,7 +104,7 @@ $profileQueryExec2by2 = mysqli_query($connection, $profileQueryQuestionSub);
                         </div>
 
                         <div class="col-md-1 btnBooMarkActionContainer my-md-auto my-2">
-                            <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questId ?>">
+                            <a href="./Backend/Question/deleteQuestion.php?questionId=<?php echo $questionId ?>">
                                 <button class="btn btnBooMarkAction">
                                     <i class="fa-solid fa-trash-can text-danger"></i>
                                 </button>
@@ -126,10 +126,10 @@ $profileQueryExec2by2 = mysqli_query($connection, $profileQueryQuestionSub);
 
 <script>
 
-    const contentContainerBox = document.querySelectorAll('.contentContainerBox');
-    console.log(contentContainerBox);
+    const questionSave = document.querySelectorAll('.questionSave');
+    console.log(questionSave);
 
-    contentContainerBox.forEach((elm) => {
+    questionSave.forEach((elm) => {
         elm.addEventListener('click', () => {
             const questionId = elm.querySelector('input').value;
             location.href = `./allAnswers.php?questionId=${questionId}`;
