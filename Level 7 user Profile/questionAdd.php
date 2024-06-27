@@ -23,6 +23,7 @@ if (!isset($_SESSION['userId'])) {
   <div class="container-fluid">
     <?php require './Frontend Components/navbar.php' ?>
     <?php require './Frontend Components/backendMsg.php' ?>
+    <?php require './Frontend Components/chatBotAddQuestion.php' ?>
 
     <div class="container addQuestions">
       <div class="row">
@@ -102,6 +103,7 @@ if (!isset($_SESSION['userId'])) {
         </div>
       </div>
     </div>
+    
   </div>
 </body>
 <script src="./Script/Question Scripts/askQuestion.js"></script>

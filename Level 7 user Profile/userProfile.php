@@ -63,7 +63,7 @@ if ($userAvtar == '') {
         <div class="leftMenu d-md-block d-none">
           <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-            <button class="nav-link active" id="v-pills-homeSummary-tab" data-bs-toggle="pill"
+            <button class="nav-link " id="v-pills-homeSummary-tab" data-bs-toggle="pill"
               data-bs-target="#v-pills-homeSummary" type="button" role="tab" aria-controls="v-pills-homeSummary"
               aria-selected="true">Home</button>
 
@@ -77,7 +77,7 @@ if ($userAvtar == '') {
             <button class="nav-link" id="v-pills-answer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-answer"
               type="button" role="tab" aria-controls="v-pills-answer" aria-selected="false">Answer</button>
 
-            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+            <button class="nav-link active" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
               type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
           </div>
         </div>
@@ -121,7 +121,7 @@ if ($userAvtar == '') {
         <div class="rightPanel">
           <div class="tab-content" id="v-pills-tabContent">
 
-            <div class="tab-pane fade show active" id="v-pills-homeSummary" role="tabpanel"
+            <div class="tab-pane fade " id="v-pills-homeSummary" role="tabpanel"
               aria-labelledby="v-pills-homeSummary-tab" tabindex="0">
             <?php require './User Profile/homeSummary.php' ?>
             </div>
@@ -141,7 +141,7 @@ if ($userAvtar == '') {
             <?php require './User Profile/answerSaved.php' ?>
             </div>
 
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+            <div class="tab-pane fade show active" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
               tabindex="0">
             <?php require './User Profile/settings.php' ?>
             </div>
