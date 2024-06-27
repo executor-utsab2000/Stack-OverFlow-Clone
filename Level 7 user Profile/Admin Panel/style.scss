@@ -22,9 +22,24 @@
             i {
                 font-size: 1.5rem;
             }
+            .countNoNotification{
+                position: absolute;
+                top: -15px;
+                left: -20px;
+                height: 30px;
+                width: 30px;
+                font-size: 0.6rem;
+                background-color: red;
+                color: yellow;
+                border-radius:50% ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
         .notificationBox {
+            display: none;
             position: absolute;
             right: 50px;
             min-width: 260px;

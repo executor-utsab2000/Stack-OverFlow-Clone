@@ -33,11 +33,13 @@ require '../Frontend Components/backendMsg.php';
 
             <div class="notificationButton">
                 <i class="fa-solid fa-bell"></i>
+                <span class="countNoNotification">75</span>
             </div>
-            <div class="notificationBox ">
+            <div class="notificationBox">
                 <div class="header"></div>
                 <div class="notifiicationContent">
 
+                    <!-- msg notifaction start-->
                     <div class="notificationTab">
                         <div class="dp">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxIMA5q-wOA7Xegu1rx-BSdG5tmNLYIuCNvjMJ1JFHAc13zxlj2Fb0mB6MA7vGWAXrWZA&usqp=CAU"
@@ -46,6 +48,7 @@ require '../Frontend Components/backendMsg.php';
                         <div class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus
                             accusamus autem doloremque! Aspernatur, est eveniet.</div>
                     </div>
+                    <!-- msg notifaction end-->
 
                 </div>
             </div>
@@ -56,5 +59,6 @@ require '../Frontend Components/backendMsg.php';
     </div>
 </body>
 <script type="module" src="../Script/Url Change BackendMsg/noParameterGetMsg.changeUrl.js"></script>
+<script src="./adminScript.js"></script>
 
 </html>
