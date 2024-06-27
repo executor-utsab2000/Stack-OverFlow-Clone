@@ -11,7 +11,7 @@
     }
 
     .chatBotIcon i {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .chatBot {
@@ -416,7 +416,7 @@
 
     // ----------------------------------------------------------------------------
     // ----------------------------------------------------------------------------
-    
+
     const chatHandler = () => {
         userMsg = chatInputUser.value.trim();
         if (!userMsg) return;
@@ -442,7 +442,6 @@
     chatSend.addEventListener("click", chatHandler);
 
     const yesNoChat = document.querySelectorAll(".yesNoChat");
-    // console.log(yesNoChat);
 
     const yesNoHandler = (elm) => {
         const elementVal = elm.target.innerHTML;
