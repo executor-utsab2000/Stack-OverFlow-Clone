@@ -1,0 +1,202 @@
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+.userProfile {
+    margin-top: 10rem;
+
+    .headerSection {
+        display: flex;
+        flex-wrap: wrap;
+
+        .imgContainer {
+            height: 8rem;
+            width: 8rem;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+            img {
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+
+        .userDetailsTop {
+            .nameTop {
+                font-weight: 800;
+                letter-spacing: 1px;
+                font-size: 2.5rem;
+            }
+
+            .userId {
+                font-weight: 800;
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+                color: #adb5bd;
+            }
+
+            .smallDetails {
+                color: #8b8c89;
+                font-weight: 700;
+                font-size: 0.8rem;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+        }
+
+    }
+
+    .detailsSection {
+        margin-top: 2rem;
+        display: flex;
+
+
+        .leftMenu {
+            max-width: 14rem;
+            padding: 0.5rem 1rem;
+
+            button {
+                margin-bottom: 0.5rem;
+                font-size: 0.7rem;
+                color: #14213d;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            .active {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                background-color: #ced4da;
+            }
+        }
+
+        .rightPanel {
+            padding: 0.5rem 1rem;
+            width: 100%;
+
+
+            .subTabs {
+                button {
+                    margin-bottom: 0.5rem;
+                    font-size: 0.7rem;
+                    color: #14213d;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                }
+
+                .active {
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    background-color: #ced4da;
+                }
+            }
+
+
+            .headerPanel {
+                font-weight: 800;
+                letter-spacing: 1px;
+                font-size: 1.1rem;
+                text-transform: capitalize;
+                margin-bottom: 1rem;
+            }
+
+
+            .contentContainerBox {
+                padding: 2rem;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                border-radius: 10px;
+                margin-bottom: 1rem;
+                background-color: #dee2e6;
+                
+                .itemTitle {
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
+
+
+                .itemDesc {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-top: 1rem;
+                    color: #4e5154;
+                    font-size: 0.8rem;
+                    font-weight: 650;
+
+                }
+
+                .itemSub{
+                    color: #8b8c89;
+                }
+
+                .btnBooMarkActionContainer {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                }
+
+                .btnBooMarkAction {
+                    margin-bottom: 0.5rem;
+                    min-width: 4rem;
+                    filter: drop-shadow(5px 5px 5px #000000);
+                }
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

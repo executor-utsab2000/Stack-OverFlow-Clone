@@ -1,0 +1,98 @@
+.adminPanel {
+    .navBar {
+        padding: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        font-weight: 800;
+        font-size: 1.5 rem;
+        letter-spacing: 1px;
+        display: block;
+        width: 100%;
+        position: fixed;
+
+        img {
+            height: 3.5rem;
+            filter: drop-shadow(5px 5px 4px #000000);
+        }
+
+        .notificationButton {
+            position: absolute;
+            top: 40%;
+            right: 60px;
+
+            i {
+                font-size: 1.5rem;
+            }
+            .countNoNotification{
+                position: absolute;
+                top: -15px;
+                left: -20px;
+                height: 30px;
+                width: 30px;
+                font-size: 0.6rem;
+                background-color: red;
+                color: yellow;
+                border-radius:50% ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .notificationBox {
+            display: none;
+            position: absolute;
+            right: 50px;
+            min-width: 260px;
+            width: 260px;
+            height: 20rem;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #e7ecef;
+
+
+            .header {
+                position: absolute;
+                top: 0;
+                padding: 10px;
+                width: 100%;
+                background-color: #4f772d;
+            }
+
+            .notifiicationContent {
+                position: absolute;
+                top: 20px;
+
+                .notificationTab {
+                    display: flex;
+                    font-weight: 700;
+                    font-size: 0.6rem;
+                    padding: 10px;
+                    margin-bottom: 0.2rem;
+                    position: relative;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+                    .dp {
+                        width: 40px;
+                        margin: auto;
+
+                        img {
+                            height: 28px;
+                            width: 25px;
+                            border-radius: 50%;
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        }
+                    }
+
+                    .content {
+                        width: 210px;
+                        padding: 5px;
+                        font-size: 0.5rem;
+                        line-height: 9px;
+                    }
+
+                }
+            }
+        }
+    }
+}
