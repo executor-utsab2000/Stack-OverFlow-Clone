@@ -12,8 +12,3 @@ function headerFunction($location, $assoctativeArrayParams = '')
 
 
 ?>
-<!--
- message=$msg&
- icon=$icon&
- colorClass=$colorClass
- -->
