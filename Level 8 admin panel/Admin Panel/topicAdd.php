@@ -3,7 +3,7 @@ session_start();
 
 if (
     !isset($_SESSION['isAdminActive']) &&
-    $_SESSION['isAdminActive'] = !true &&
+    $_SESSION['isAdminActive'] == !true &&
     !isset($_GET['topicName']) &&
     !isset($_GET['reqToAdminId'])
 ) {
