@@ -11,7 +11,14 @@ if (
 }
 
 require '../Frontend Components/cdnLinks.php';
-echo $_GET['topicName'];
+require '../Backend/Components/connection.php';
+require '../Frontend Components/backendMsg.php';
+
+$reqToAdminId = $_GET['reqToAdminId'];
+$topicName = $_GET['topicName'];
+$userId = $_GET['userId'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +29,7 @@ echo $_GET['topicName'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./topicAdd.scss" />
     <link rel="stylesheet" href="../Style/contentContainer.scss" />
-    <title>Document</title>
+    <title>Admin || Add Topic</title>
 </head>
 
 <body>
@@ -34,7 +41,9 @@ echo $_GET['topicName'];
             <span class="ps-3">Admin Panel</span>
 
             <div class="logoutBtn">
-                <button>log out</button>
+                <a href="./admin.logout.php">
+                    <button>log out</button>
+                </a>
             </div>
         </div>
         <!-- ---------------------------------- navbar close --------------------------------------------------------------------- -->
@@ -50,6 +59,32 @@ echo $_GET['topicName'];
                 </div>
                 <div class="col-lg-8">
                     <div class="header">Add Topic</div>
+                    <form action="./topicAdd.back.php" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-12 my-2">
+                                <input type="hidden" name="reqToAdminId" value="<?php echo $reqToAdminId ?>">
+                                <label for="topicName">topic name</label>
+                                <input type="text" name="topicName" id="topicName" class="inputTopics"
+                                    value="<?php echo $topicName ?>">
+                            </div>
+                            <div class="col-12 my-2">
+                                <label for="topicDesc">topic description</label>
+                                <textarea rows="5" name="topicDesc" id="topicDesc" class="inputTopics"></textarea>
+                            </div>
+                            <div class="col-12 my-2">
+                                <label for="userId">topic requested by (userId)</label>
+                                <input type="text" name="userId" id="userId" class="inputTopics"
+                                    value="<?php echo $userId ?>" readonly>
+                            </div>
+                            <div class="col-12 my-2">
+                                <label for="topicAvtar">topic avtar</label>
+                                <input type="file" name="topicAvtar" id="topicAvtar" class="inputTopics">
+                            </div>
+                            <div class="col-12 my-4">
+                                <input type="submit" name="" id="" class="inputTopics submit">
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

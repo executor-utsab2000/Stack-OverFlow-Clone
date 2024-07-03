@@ -30,8 +30,9 @@ const attachEventListners = () => {
       elm.children[1].children[0].addEventListener("click", () => {
         const reqToAdminId = elm.children[0].children[0].value;
         const topicName = elm.children[0].children[1].value;
+        const userId = elm.children[0].children[2].value;
 
-        location.href = `./topicAdd.php?topicName=${topicName}&reqToAdminId=${reqToAdminId}`;
+        location.href = `./topicAdd.php?topicName=${topicName}&reqToAdminId=${reqToAdminId}&userId=${userId}`;
       });
 
       // delete btn

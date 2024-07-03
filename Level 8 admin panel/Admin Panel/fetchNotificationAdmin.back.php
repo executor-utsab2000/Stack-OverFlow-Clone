@@ -24,6 +24,7 @@ while ($notifData = mysqli_fetch_assoc($notificationQuery)) {
         <div class="leftContent">
             <input type="hidden" value="<?php echo $id ?>">
             <input type="hidden" value="<?php echo $topicName ?>">
+            <input type="hidden" value="<?php echo $userId ?>">
             <div class="dp">
                 <img src="<?php echo $userDp ?></strong>" alt="" class="img-fluid">
             </div>

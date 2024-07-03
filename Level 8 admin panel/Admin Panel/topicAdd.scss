@@ -21,6 +21,7 @@
         .logoutBtn {
             position: absolute;
             right: 50px;
+            top: 40%;
 
             button {
                 font-size: 0.7rem;
@@ -40,18 +41,47 @@
 
 
     .content {
-        margin-top: 9rem;
+        margin-top: 7.5rem;
 
-        .imgContainer{
-            img{
+        .imgContainer {
+            img {
                 filter: drop-shadow(5px 5px 4px #000000);
             }
         }
 
-        .header{
+        .header {
             text-align: center;
             font-weight: 800;
             font-size: 2.5rem;
+        }
+
+        form {
+            label {
+                font-weight: 700;
+                font-size: 1rem;
+                text-transform: capitalize;
+                padding-bottom: 0.3rem;
+
+                &::after {
+                    content: ":";
+                }
+            }
+
+            .inputTopics {
+                resize: none;
+                width: 100%;
+                border-radius: 10px;
+                padding: 0.3rem 0.5rem;
+                border: gray 1px solid;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+            .submit{
+                background-color: #06d6a0;
+                padding: 0.5rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+                font-size: 1.1rem;
+            }
         }
     }
 }

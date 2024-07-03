@@ -3,9 +3,9 @@ session_start();
 
 if (
     !isset($_SESSION['isAdminActive']) &&
-    $_SESSION['isAdminActive'] = !true
+    $_SESSION['isAdminActive'] == !true
 ) {
-    header("location:./Admin Panel/admin.login.php");
+    header("location:./admin.login.php");
 }
 
 require './admin.sql.php';
@@ -42,14 +42,16 @@ require '../Frontend Components/backendMsg.php';
                 <div class="notifiicationContent">
 
                     <!-- msg notifaction start-->
-                  
+
                     <!-- msg notifaction end-->
 
                 </div>
             </div>
 
             <div class="logoutBtn">
-                <button>log out</button>
+                <a href="./admin.logout.php">
+                    <button>log out</button>
+                </a>
             </div>
         </div>
         <!-- ---------------------------------- navbar close --------------------------------------------------------------------- -->
