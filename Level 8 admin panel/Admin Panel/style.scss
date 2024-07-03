@@ -148,55 +148,102 @@
             color: #415a77;
         }
 
-        .summary {
-            .header {
-                font-weight: 700;
-                font-size: 1.1rem;
-                color: #403d39;
-                letter-spacing: 0;
-                padding: 0.5rem 0;
-                border-bottom: 2px solid #e9ecef;
-            }
+        .subHeader {
+            font-weight: 700;
+            font-size: 1.1rem !important;
+            color: #403d39;
+            letter-spacing: 0;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid #e9ecef;
+        }
 
-            .contentDivs {
-                display: flex;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
+        .userTopicDiv {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-around;
 
-                .contentContainer {
-                    min-width: 18rem;
-                    margin: 1rem;
-                    display: flex;
-                    justify-content: space-between;
-                    max-width: 20rem;
+            .contentContainer {
+                min-width: 350px;
+                width: 40vw;
+                max-width: 40rem;
+                margin: 1rem;
 
-                    .imgContainer {
-                        margin: auto 0;
-                        padding: 20px;
-                        border-radius: 50%;
-                        background-color: #fcbf49;
-                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .topicsContent {
+                    .topicsTabs {
+                        .details {
+                            display: flex;
+                            justify-content: space-around;
+                            flex-wrap: wrap;
 
-                        img {
-                            height: 30px;
-                            width: 30px;
+                            .imgContainer {
+                                width: 15%;
+                                margin: auto;
+
+                                img {
+                                    height: 70px;
+                                    border-radius: 50%;
+                                    width: 70px;
+                                    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                                }
+                            }
+
+                            .topicName {
+                                margin: auto;
+                                width: 15%;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                font-size: 0.9rem;
+                                text-transform: capitalize;
+                                text-align: center;
+                                padding: 0.5rem;
+                            }
+
+                            .topicDesc {
+                                padding: 0.5rem;
+                                width: 40%;
+                                font-weight: 700;
+                                font-size: 0.6rem;
+                            }
+
+                            .otherInfo {
+                                margin: auto;
+                                padding: 0.5rem;
+                                width: 30%;
+
+                                .topicReqBy {
+                                    text-align: center;
+                                    border-bottom: 1px solid gray;
+                                    padding-bottom: 0.6rem;
+
+                                    .userId {
+                                        font-weight: 800;
+                                        letter-spacing: 1px;
+                                        font-size: 0.7rem;
+                                        color: red;
+                                    }
+
+                                    .userName {
+                                        font-weight: 800;
+                                        letter-spacing: 1px;
+                                        font-size: 0.7rem;
+                                        color: gray;
+                                    }
+                                }
+
+                                .dtTime {
+                                    padding: 0.5rem;
+                                    text-align: center;
+                                    font-weight: 800;
+                                    letter-spacing: 1px;
+                                    font-size: 0.7rem;
+                                    color: red;
+                                }
+                            }
                         }
-                    }
 
-                    .header {
-                        color: #6c757d;
-                        font-size: 0.9rem;
-                        border-radius: 10px;
-                    }
-
-                    .contentMatter {
-                        margin-top: 1rem;
-                        font-weight: 800;
-                        font-size: 1.6rem;
-                        text-align: center;
-                        color: red;
                     }
                 }
+
             }
         }
     }

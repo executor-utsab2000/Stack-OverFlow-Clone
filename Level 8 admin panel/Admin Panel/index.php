@@ -64,65 +64,19 @@ require '../Frontend Components/backendMsg.php';
 
             <div class="contentContainer mt-4">
                 <div class="summary">
-                    <div class="header">In a brief</div>
-                    <div class="contentDivs my-2">
-
-                        <div class="contentContainer">
-                            <div class="imgContainer">
-                                <img src="../Images/UI/Admin/topic.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="">
-                                <div class="header">Total Topics Available</div>
-                                <div class="contentMatter">5 </div>
-                            </div>
-                        </div>
-                        <div class="contentContainer">
-                            <div class="imgContainer">
-                                <img src="../Images/UI/Admin/user.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="">
-                                <div class="header">Total Active Users </div>
-                                <div class="contentMatter">5 </div>
-                            </div>
-                        </div>
-                        <div class="contentContainer">
-                            <div class="imgContainer">
-                                <img src="../Images/UI/Admin/question.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="">
-                                <div class="header">Total Questions Available</div>
-                                <div class="contentMatter">5 </div>
-                            </div>
-                        </div>
-                        <div class="contentContainer">
-                            <div class="imgContainer">
-                                <img src="../Images/UI/Admin/answer.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="">
-                                <div class="header">Total Answers Available</div>
-                                <div class="contentMatter">5 </div>
-                            </div>
-                        </div>
-                        <div class="contentContainer">
-                            <div class="imgContainer">
-                                <img src="../Images/UI/Admin/qNaRatio.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="">
-                                <div class="header">Question to Answer Ratio</div>
-                                <div class="contentMatter">2:1 </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <?php require './IndexComponents/summary.php' ?>
                 </div>
             </div>
 
 
-            <!-- details -->
-
-
+            <div class="userTopicDiv">
+                <?php require './IndexComponents/userTopicDiv.php' ?>
+            </div>
 
         </div>
+
+
+        <!-- details -->
 
 
 
