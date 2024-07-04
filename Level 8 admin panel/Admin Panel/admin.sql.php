@@ -20,7 +20,9 @@ if ($totalAnswerCount != 0) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // all records
-
+$allTopics = mysqli_query($connection, "select topics.`topic id` , topics.`topic name`,topics.`topic description` , topics.`topic avtar` , topics.`requested by user` , topics.`topic created at` ,
+                                            users.`username`
+                                            from topics left join users on topics.`requested by user` = users.userID;");
 
 
 

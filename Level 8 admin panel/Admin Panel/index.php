@@ -70,7 +70,9 @@ require '../Frontend Components/backendMsg.php';
 
 
             <div class="userTopicDiv">
-                <?php require './IndexComponents/userTopicDiv.php' ?>
+                <div class="row">
+                    <?php require './IndexComponents/userTopicDiv.php' ?>
+                </div>
             </div>
 
         </div>

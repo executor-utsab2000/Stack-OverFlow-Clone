@@ -159,92 +159,117 @@
 
         .userTopicDiv {
             margin-top: 1rem;
-            display: flex;
-            justify-content: space-around;
 
             .contentContainer {
                 min-width: 350px;
-                width: 40vw;
-                max-width: 40rem;
-                margin: 1rem;
+                width: 100%;
 
                 .topicsContent {
                     .topicsTabs {
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        padding: 0.5rem;
+                        border-radius: 10px;
+
                         .details {
-                            display: flex;
-                            justify-content: space-around;
-                            flex-wrap: wrap;
+
+                            .editable {
+                                width: 100%;
+                                font-weight: 700;
+                                padding: 0.5rem;
+                                border: 0;
+                                outline: 0;
+                                background-color: transparent;
+                            }
 
                             .imgContainer {
-                                width: 15%;
                                 margin: auto;
 
                                 img {
                                     height: 70px;
-                                    border-radius: 50%;
                                     width: 70px;
+                                    border-radius: 50%;
                                     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                                    object-fit: cover;
                                 }
                             }
 
                             .topicName {
-                                margin: auto;
-                                width: 15%;
-                                font-weight: 700;
                                 letter-spacing: 1px;
                                 font-size: 0.9rem;
                                 text-transform: capitalize;
                                 text-align: center;
-                                padding: 0.5rem;
+
                             }
 
                             .topicDesc {
-                                padding: 0.5rem;
-                                width: 40%;
-                                font-weight: 700;
-                                font-size: 0.6rem;
-                            }
+                                margin-top: 0.5rem;
+                                width: 100%;
 
-                            .otherInfo {
-                                margin: auto;
-                                padding: 0.5rem;
-                                width: 30%;
-
-                                .topicReqBy {
-                                    text-align: center;
-                                    border-bottom: 1px solid gray;
-                                    padding-bottom: 0.6rem;
-
-                                    .userId {
-                                        font-weight: 800;
-                                        letter-spacing: 1px;
-                                        font-size: 0.7rem;
-                                        color: red;
-                                    }
-
-                                    .userName {
-                                        font-weight: 800;
-                                        letter-spacing: 1px;
-                                        font-size: 0.7rem;
-                                        color: gray;
-                                    }
+                                textarea {
+                                    font-size: 0.6rem;
+                                    height: 100px;
+                                    resize: none;
+                                    overflow: scroll;
+                                    /* Enables scrolling */
                                 }
 
-                                .dtTime {
-                                    padding: 0.5rem;
-                                    text-align: center;
+                                & ::-webkit-scrollbar {
+                                    display: none !important;
+                                }
+                            }
+
+                        }
+
+                        .otherInfo {
+                            padding: 0.5rem;
+                            width: 100%;
+
+                            .topicReqBy {
+                                text-align: center;
+                                border-bottom: 1px solid gray;
+                                padding-bottom: 0.6rem;
+
+                                .userId {
                                     font-weight: 800;
                                     letter-spacing: 1px;
                                     font-size: 0.7rem;
                                     color: red;
                                 }
+
+                                .userName {
+                                    font-weight: 800;
+                                    letter-spacing: 1px;
+                                    font-size: 0.7rem;
+                                    color: gray;
+                                }
+                            }
+
+                            .dtTime {
+                                padding: 0.5rem;
+                                text-align: center;
+                                font-weight: 800;
+                                letter-spacing: 1px;
+                                font-size: 0.7rem;
+                                color: red;
                             }
                         }
-
                     }
-                }
 
+                    .iconAction {
+                        margin-top: 1.5rem;
+                        display: flex;
+                        justify-content: space-around;
+
+                        button {
+                            i {
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+
+                }
             }
+
         }
     }
 }
