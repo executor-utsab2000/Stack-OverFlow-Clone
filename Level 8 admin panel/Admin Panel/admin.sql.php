@@ -28,6 +28,13 @@ $allTopics = mysqli_query($connection, "select topics.`topic id` , topics.`topic
 
 
 
+$allUserData = mysqli_query($connection, "
+                                            select users.userID , users.username , users.userDob , users.userEmail , users.userAvtar , 
+                                            (select count(*) from question group by userId) as `questionCount`,  
+                                            (select count(*) from answer group by `user id`) as `answerCount`
+                                            from users left join
+                                            question on  users.userID = question.userId;
+")
 
 
 
@@ -41,5 +48,4 @@ $allTopics = mysqli_query($connection, "select topics.`topic id` , topics.`topic
 
 
 
-
-?>
+    ?>
